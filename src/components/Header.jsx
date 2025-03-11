@@ -2,11 +2,9 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import Confetti from 'react-confetti'
 
-
 export default function Navbar () {
   const [activeLink, setActiveLink] = useState('')
   const [menuOpen, setMenuOpen] = useState(false)
-  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,9 +47,7 @@ export default function Navbar () {
         <a onClick={handleClick} href='#Naver'>
           <h1 className='text-2xl font-bold text-blue-600'>
             Abdur Rahman
-            <span className='inline-block rounded-full mx-2 text-4xl'>
-              🎓
-            </span>
+            <span className='inline-block rounded-full mx-2 text-4xl'>🎓</span>
           </h1>
         </a>
         {/* Desktop Navigation */}
@@ -69,7 +65,7 @@ export default function Navbar () {
               href={`#${link}`}
               onClick={() => handleClick(link)}
               className={`text-gray-600 hover:text-blue-600 transition-all duration-300 ease-in-out px-4 py-2 rounded-full text-lg font-medium ${
-                activeLink === link ? 'bg-orange-100 text-blue-600' : ''
+                activeLink === link ? 'bg-blue-600 text-white' : ''
               }`}
             >
               {link.charAt(0).toUpperCase() + link.slice(1)}

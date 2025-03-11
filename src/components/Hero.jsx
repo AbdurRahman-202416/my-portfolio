@@ -74,7 +74,7 @@ export default function Hero () {
                 <a href='#ContactMe'>Resume</a>
               </button>
             </h1>
-            <h1 className='relative inline-block py-4 px-4'>
+            <h1 className='relative inline-block py-1 px-1 m-2 sm:m-0'>
               <button
                 className='text-base hover:bg-transparent border-2 border-blue-600 sm:text-lg md:text-xl lg:text-2xl bg-blue-600 text-white hover:text-black py-2 px-2  rounded-full transition duration-300 ease-in-out transform hover:scale-105 ml-4'
                 onClick={handleClick}
