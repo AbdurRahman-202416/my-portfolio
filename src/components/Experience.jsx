@@ -1,4 +1,4 @@
-export default function Experience () {
+export default function Experience() {
   const experiences = [
     {
       company: 'Kona Software Lab Limited',
@@ -10,9 +10,9 @@ export default function Experience () {
   ]
 
   return (
-    <section id='experience' className='py-12 bg-gray-50'>
-      <div className='container mx-auto px-6'>
-        <h2 className='text-3xl font-bold mb-8 text-center text-gray-800'>
+    <section id='experience' className=' bg-gray-50'>
+      <div className='container mx-auto px-2'>
+        <h2 className='sm:text-3xl text-2xl  font-bold mb-8 text-center text-gray-800'>
           Experience
           <span className='block w-28 h-1 bg-blue-600 mx-auto mt-2 rounded'></span>
         </h2>
@@ -20,9 +20,9 @@ export default function Experience () {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className='p-6 bg-white rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl'
+              className='p-2 bg-white rounded-lg  transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl'
             >
-              <h3 className='sm:text-2xl text-xl font-semibold text-gray-800 mb-2'>
+              <h3 className='sm:text-2xl text-[16px] font-semibold text-gray-800 mb-2'>
                 {exp.role}
               </h3>
               <p className='text-blue-600 mb-4'>

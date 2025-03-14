@@ -1,30 +1,21 @@
 import { useState } from 'react'
 import Typewriter from 'typewriter-effect'
 import SocialLinks from './SocialLinks'
-import img from '../../public/img.jpg'
+import img from '../../public/my-photo.jpg'
 import CountUp from 'react-countup'
-import Confetti from 'react-confetti'
 
-export default function Hero () {
-  const [celebrate, setCelebrate] = useState(false)
 
-  const handleClick = () => {
-    setCelebrate(true)
+export default function Hero() {
 
-    // Reset the celebration after 3 seconds
-    setTimeout(() => setCelebrate(false), 6000)
-  }
+
 
   return (
-    <section className='px-6 pt-24 pb-10 bg-gray-100'>
-      {/* Confetti Effect */}
-      {celebrate && (
-        <Confetti width={window.innerWidth} height={window.innerHeight} />
-      )}
+    <section className='px-6 pt-18 pb-10 sm:pt-22 bg-gray-100'>
+
 
       <div className='grid lg:grid-cols-2 items-center justify-items-center gap-5'>
         {/* Image Section */}
-        <div className='order-1 lg:order-1 shadow-2xl'>
+        <div className=' lg:order-1 shadow-2xl'>
           <img
             className='w-[100%] max-w-[300px] sm:max-w-[400px] md:max-w-[500px] h-auto aspect-square object-cover rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105'
             src={img}
@@ -40,15 +31,15 @@ export default function Hero () {
           <p className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900'>
             I'm <span className='text-blue-600'>Abdur Rahman</span>.
           </p>
-          <h1 className='text-lg sm:text-2xl md:text-3xl lg:text-4xl text-nowrap text-gray-800'>
+          <h1 className="text-lg  sm:text-2xl md:text-3xl lg:text-4xl inline-flex text-left items-center text-gray-800">
             I am a{' '}
-            <span>
+            <span className="ml-1">
               <Typewriter
                 options={{
                   strings: [
-                    'Frontend Developer.',
+                    'Frontend Dev.',
                     'Web Developer.',
-                    'Software Developer.',
+                    'Software Dev.',
                     'Web Designer.',
                     'Programmer.'
                   ],
@@ -61,26 +52,21 @@ export default function Hero () {
               />
             </span>
           </h1>
-          <p className='mt-2 text-sm sm:text-lg md:text-xl lg:text-2xl text-gray-700'>
-            Designer and Developer devoted to crafting beautiful web experiences
-            focused on simplicity and purpose.
+
+          <p className="mt-2 text-sm sm:text-lg md:text-xl text-left lg:text-2xl text-gray-700">
+            Passionate about designing and developing seamless, user-centric web experiences
+            that blend aesthetics with functionality.
           </p>
 
+
           {/* Buttons */}
-          <div className='sm:flex mx-auto justify-center gap-4 sm:justify-start mt-8'>
-            <h1>
-              <button className='text-base sm:text-lg md:text-xl lg:text-2xl bg-blue-600 text-white hover:text-black py-2 px-5 hover:bg-transparent border-2 border-blue-600 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105'>
-                <span className='mx-2 p-1'>╰┈➤</span>
-                <a href='#ContactMe'>Resume</a>
-              </button>
-            </h1>
-            <h1 className='relative inline-block py-1 px-1 m-2 sm:m-0'>
-              <button
-                className='text-base hover:bg-transparent border-2 border-blue-600 sm:text-lg md:text-xl lg:text-2xl bg-blue-600 text-white hover:text-black py-2 px-2  rounded-full transition duration-300 ease-in-out transform hover:scale-105 ml-4'
-                onClick={handleClick}
-              >
-                🎉Yay
-              </button>
+          <div className='sm:flex mx-auto justify-center gap-8 sm:justify-start py-2.5'>
+            <h1 className='py-2'>
+              <a href=""
+                class="animate-pulse focus:animate-none hover:animate-none inline-flex text-md font-medium bg-indigo-600 mt-3 px-4 py-2 rounded-lg tracking-wide text-white">
+                <span class="ml-2">Resume</span>
+              </a>
+
             </h1>
 
             {/* Social Links */}

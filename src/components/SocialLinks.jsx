@@ -9,14 +9,14 @@ const SocialLinks = () => {
   ];
 
   return (
-    <div className="flex justify-center gap-4 mt-2">
+    <div className="flex justify-center mt-5 sm:mt-4 gap-4 ">
       {socialLinks.map(({ href, icon }) => (
         <a
           key={icon}
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-blue-600 text-black transition-transform duration-300 ease-in-out hover:bg-blue-600 hover:text-white hover:scale-110 shadow-lg"
+          className="sm:w-12 w-8 h-8 sm:h-12 flex items-center justify-center rounded-full border sm:border-2 border-blue-600 text-black transition-transform duration-300 ease-in-out hover:bg-blue-600 hover:text-white hover:scale-110 shadow-lg"
         >
           <i className={`fab fa-${icon} text-2xl`} />
         </a>

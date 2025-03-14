@@ -104,7 +104,7 @@ export default function Contact() {
 
       {/* Footer Section */}
       <footer className=" text-center py-6 mt-16">
-        <p className="text-lg">&copy; {new Date().getFullYear()} Abdur Rahman. All rights reserved.</p>
+        <p className="text-sm">&copy; {new Date().getFullYear()} Abdur Rahman. All rights reserved.</p>
       </footer>
     </section>
   );

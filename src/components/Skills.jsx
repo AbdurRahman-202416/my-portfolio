@@ -1,4 +1,4 @@
-export default function Skills () {
+export default function Skills() {
   const skills = [
     {
       category: 'Programming Languages',
@@ -6,7 +6,7 @@ export default function Skills () {
         { name: 'C', icon: 'fas fa-code' },
         { name: 'C++', icon: 'fas fa-code' },
         { name: 'JavaScript', icon: 'fab fa-js-square' },
-        { name: 'TypeScript', icon: 'custom-ts-icon' } // Custom icon for TS
+        { name: 'TypeScript', icon: 'custom-ts-icon' }
       ]
     },
     {
@@ -33,7 +33,7 @@ export default function Skills () {
     {
       category: 'Familiar',
       skills: [
-        { name: 'Next.js', icon: 'fab fa-react' }, // React icon used as Next.js is built on React
+        { name: 'Next.js', icon: 'fab fa-react' },
         { name: 'Shadcn/ui', icon: 'fas fa-paint-brush' },
         { name: 'Material-UI', icon: 'fas fa-paint-brush' }
       ]
@@ -43,17 +43,15 @@ export default function Skills () {
       skills: [
         { name: 'Chrome Dev Tool', icon: 'fab fa-chrome' },
         { name: 'Git', icon: 'fab fa-git' },
-        { name: 'Redux', icon: 'fab fa-react' }, // React icon used for Redux
+        { name: 'Redux', icon: 'fab fa-react' },
         { name: 'Axios', icon: 'fab fa-js-square' },
         { name: 'React Router DOM', icon: 'fab fa-react' },
-        // Use custom cloud icons for Vercel and Netlify
-        { name: 'Vercel', icon: 'fas fa-cloud' }, // Use cloud icon as alternative
-        { name: 'Netlify', icon: 'fas fa-cloud' }, // Use cloud icon as alternative
-        // Use a code-like icon for ESLint
+        { name: 'Vercel', icon: 'fas fa-cloud' },
+        { name: 'Netlify', icon: 'fas fa-cloud' },
         { name: 'ESLint', icon: 'fas fa-laptop-code' }
       ]
     }
-  ]
+  ];
 
   return (
     <section id='skills' className='py-12 bg-blue-50'>
@@ -73,9 +71,8 @@ export default function Skills () {
                 {skills.map(({ name, icon }) => (
                   <div
                     key={name}
-                    className='bg-white p-4 rounded-lg shadow-sm text-center flex flex-col items-center'
+                    className='bg-white p-4 rounded-lg shadow-sm text-center flex flex-col items-center transform transition-transform duration-500 hover:rotate-3 hover:scale-110 hover:shadow-lg border-2 border-transparent hover:border-blue-500 hover:ring-2 hover:ring-blue-400 hover:ring-opacity-50'
                   >
-                    {/* Conditional rendering for custom icon */}
                     {icon === 'custom-ts-icon' ? (
                       <div className='bg-blue-600 text-white text-xl w-12 h-12 flex items-center justify-center rounded-full mb-2'>
                         TS
@@ -92,5 +89,5 @@ export default function Skills () {
         </div>
       </div>
     </section>
-  )
+  );
 }

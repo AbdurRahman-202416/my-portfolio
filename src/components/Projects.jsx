@@ -6,7 +6,7 @@ import admin from '../assets/admin.jpeg'
 import postOffice from '../assets/post.jpeg'
 import job from '../assets/job.jpeg'
 
-export default function Projects () {
+export default function Projects() {
   const projects = [
     {
       title: 'Admin Dashboard',
@@ -107,8 +107,8 @@ export default function Projects () {
   ]
 
   return (
-    <section id='projects' className='py-12 bg-blue-50'>
-      <div className='container flex flex-col items-center justify-center gap-8 mx-auto px-4'>
+    <section id='projects' className='py-2 bg-blue-50'>
+      <div className='container flex flex-col items-center justify-center gap-6 mx-auto px-4'>
         <h2 className='text-3xl font-bold mb-8 text-center text-gray-800'>
           Projects
           <span className='block w-28 h-1 bg-blue-600 mx-auto mt-2 rounded'></span>
@@ -117,15 +117,15 @@ export default function Projects () {
           {projects.map((project, index) => (
             <div
               key={index}
-              className='bg-white px-2 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out'
+              className='bg-white px-2 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out flex flex-col h-full'
             >
               {/* Project Image */}
               <img
                 src={project.image}
                 alt={project.title}
-                className='w-full h-64 object-cover rounded-lg mb-4'
+                className='w-full h-64 object-contain rounded-lg mb-4'
               />
-              <h3 className='text-2xl font-semibold mb-2 text-gray-800'>
+              <h3 className='text-1xl font-semibold mb-2 text-gray-800'>
                 {project.title}
               </h3>
               <p className='text-gray-600 mb-4'>{project.description}</p>
@@ -141,40 +141,43 @@ export default function Projects () {
                   </span>
                 ))}
               </div>
-              {/* Links */}
-              <div className='flex justify-between mb-0 mt-6 items-center space-x-4'>
+
+              {/* Buttons Footer */}
+              <div className="mt-auto flex justify-between items-center gap-4 pt-6 border-t">
                 {project.demoLink && (
                   <a
                     href={project.demoLink}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-white bg-blue-600 px-6 py-3 rounded-full text-sm font-semibold transform transition duration-300 hover:scale-105 hover:shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center px-6 py-1 text-white bg-blue-600 rounded-lg text-sm font-semibold transition duration-300 hover:scale-105 hover:shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
                   >
                     Live Demo
                   </a>
                 )}
                 <a
                   href={project.repoLink}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-white bg-blue-600 px-6 py-3 rounded-full text-sm font-semibold transform transition duration-300 hover:scale-105 hover:shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300'
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 text-center px-6 py-1 text-white bg-gray-800 rounded-lg text-sm font-semibold transition duration-300 hover:scale-105 hover:shadow-lg hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-500"
                 >
                   GitHub Repo
                 </a>
                 {project.backendLink && (
                   <a
                     href={project.backendLink}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='text-white bg-blue-600 px-6 py-3 rounded-full text-sm font-semibold transform transition duration-300 hover:scale-105 hover:shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center px-6 py-1 text-white bg-green-600 rounded-lg text-sm font-semibold transition duration-300 hover:scale-105 hover:shadow-lg hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-300"
                   >
                     Backend API
                   </a>
                 )}
               </div>
+
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )
