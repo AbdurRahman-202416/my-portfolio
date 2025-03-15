@@ -35,10 +35,22 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleClick = link => {
-    setActiveLink(link)
-    setMenuOpen(false) // Close menu on mobile after click
-  }
+  const handleClick = (link) => {
+    setActiveLink(link);
+    setMenuOpen(false); // Close menu on mobile after click
+
+    const section = document.getElementById(link);
+    if (section) {
+      const offset = -40; // Set negative margin
+      const sectionPosition = section.getBoundingClientRect().top + window.scrollY + offset;
+
+      window.scrollTo({
+        top: sectionPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const [celebrate, setCelebrate] = useState(false)
 
   const handleClick2 = () => {

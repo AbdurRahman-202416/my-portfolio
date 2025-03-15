@@ -108,8 +108,8 @@ export default function Projects() {
 
   return (
     <section id='projects' className='py-2 bg-blue-50'>
-      <div className='container flex flex-col items-center justify-center gap-6 mx-auto px-4'>
-        <h2 className='text-3xl font-bold mb-8 text-center text-gray-800'>
+      <div className='container flex flex-col items-center justify-center gap-3 mx-auto px-4'>
+        <h2 className='text-3xl font-bold  text-center text-gray-800'>
           Projects
           <span className='block w-28 h-1 bg-blue-600 mx-auto mt-2 rounded'></span>
         </h2>

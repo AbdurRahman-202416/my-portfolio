@@ -31,7 +31,7 @@ export default function Hero() {
           <p className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900'>
             I'm <span className='text-blue-600'>Abdur Rahman</span>.
           </p>
-          <h1 className="text-lg  sm:text-2xl md:text-3xl lg:text-4xl inline-flex text-left items-center text-gray-800">
+          <h1 className="text-xl ml-9 sm:ml-0 sm:text-2xl md:text-3xl lg:text-4xl inline-flex text-left items-center text-gray-800">
             I am a{' '}
             <span className="ml-1">
               <Typewriter
@@ -62,9 +62,9 @@ export default function Hero() {
           {/* Buttons */}
           <div className='sm:flex mx-auto justify-center gap-8 sm:justify-start py-2.5'>
             <h1 className='py-2'>
-              <a href=""
-                class="animate-pulse focus:animate-none hover:animate-none inline-flex text-md font-medium bg-indigo-600 mt-3 px-4 py-2 rounded-lg tracking-wide text-white">
-                <span class="ml-2">Resume</span>
+              <a href="#"
+                className="animate-pulse focus:animate-none hover:animate-none inline-flex text-md font-medium bg-indigo-600 mt-3 px-4 py-2 rounded-lg tracking-wide text-white">
+                <span className="ml-2">Resume</span>
               </a>
 
             </h1>

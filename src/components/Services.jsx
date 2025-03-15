@@ -49,7 +49,7 @@ export default function Services() {
   return (
     <section id="services" className="py-12 bg-gray-50">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-gray-800">
+        <h2 className="text-2xl sm:text-2xl font-bold text-gray-800">
           My Services
           <span className="block w-28 h-1 bg-blue-600 mx-auto mt-2 rounded"></span>
         </h2>
