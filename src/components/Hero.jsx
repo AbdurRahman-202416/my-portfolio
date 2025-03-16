@@ -24,7 +24,7 @@ export default function Hero() {
         </div>
 
         {/* Text Section */}
-        <div className='order-2 lg:order-2 flex flex-col justify-center text-center lg:text-left'>
+        <div className='order-2 lg:order-2 flex flex-col justify-around text-center lg:text-left'>
           <p className='text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-800'>
             Hi There
           </p>
@@ -60,9 +60,9 @@ export default function Hero() {
 
 
           {/* Buttons */}
-          <div className='sm:flex mx-auto justify-center gap-8 sm:justify-start py-2.5'>
+          <div className='sm:flex  justify-center gap-8 sm:justify-start py-2.5'>
             <h1 className='py-2'>
-              <a href="#"
+              <a href="https://docs.google.com/document/d/1FZ-XzTZ7ehv5fqBquQPeII1Am3LHxzJSXIglySyLIcs/edit?usp=sharing"
                 className="animate-pulse focus:animate-none hover:animate-none inline-flex text-md font-medium bg-indigo-600 mt-3 px-4 py-2 rounded-lg tracking-wide text-white">
                 <span className="ml-2">Resume</span>
               </a>

@@ -9,7 +9,7 @@ export default function About() {
       >
         <div className='container mx-auto px-2'>
           {/* Heading */}
-          <h2 className='text-3xl font-extrabold text-gray-900 text-center mb-8 relative'>
+          <h2 className='text-2xl font-extrabold text-gray-900 text-center mb-8 relative'>
             About Me
             <span className='block w-28 h-1 bg-blue-600 mx-auto mt-2 rounded'></span>
           </h2>
