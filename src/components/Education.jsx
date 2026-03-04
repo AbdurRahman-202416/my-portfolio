@@ -1,53 +1,56 @@
-export default function Education () {
+export default function Education() {
   const educationDetails = [
     {
-      degree: 'Bachelor of Science in Computer Science',
-      institution: 'Institute of Science and Technology, National University',
-      duration: '2019 - 2024',
-      description:
-        'Studied core concepts of Computer Science including algorithms, data structures, programming languages, and software engineering.'
+      degree: 'M.Sc. in Computer Science & Engineering',
+      status: 'Ongoing',
+      institution: 'National University, Dhaka',
+      session: '2026–2027'
     },
     {
-      degree: 'Higher Secondary Certificate (HSC)',
-      institution: 'Syed Abul Hossain College, Madaripur',
-      duration: '2016 - 2017',
-      description:
-        'Focus on Science and Mathematics, which laid the foundation for advanced studies in computer science.'
-    },
-    {
-      degree: 'Secondary School Certificate (SSC)',
-      institution:
-        'Shariatpur Government Technical School and College, Shariatpur',
-      duration: '2014 - 2015',
-      description:
-        ' Focused on gaining foundational knowledge in computer science, including basic programming, networking,Computer Architecture and hardware skills.'
+      degree: 'B.Sc. in Computer Science & Engineering',
+      status: 'Completed',
+      institution: 'National University, Dhaka',
+      session: '2018–2022'
     }
-  ]
+  ];
 
   return (
-    <section id='education' className='py-12 bg-gray-100'>
-      <div className='container mx-auto px-4'>
-        <h2 className='text-3xl font-bold mb-8 text-center'>
-          Education
-          <span className='block w-28 h-1 bg-blue-600 mx-auto mt-2 rounded'></span>
-        </h2>
-        <div className='space-y-8'>
+    <section id="education" className="py-16 lg:py-24 bg-white relative">
+      <div className="container mx-auto px-6 max-w-7xl">
+        
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-xs sm:text-sm font-bold tracking-widest text-[#4fd1c5] uppercase mb-3 text-left sm:text-center">
+            Academic Background
+          </h2>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a2540] mb-4 text-left sm:text-center">
+            Education
+          </h3>
+          <div className="w-16 h-1 bg-[#0a2540] rounded-full mx-0 sm:mx-auto"></div>
+        </div>
+
+        <div className="max-w-3xl mx-auto space-y-4 lg:space-y-6">
           {educationDetails.map((education, index) => (
-            <div
+            <div 
               key={index}
-              className='bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow'
+              className="bg-gray-50 border border-gray-100 p-6 lg:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4 hover:shadow-md transition-shadow group"
             >
-              <h3 className='sm:text-2xl text-xl font-semibold text-blue-600'>
-                {education.degree}
-              </h3>
-              <p className='text-gray-600 mb-2'>
-                {education.institution} | {education.duration}
-              </p>
-              <p className='text-gray-700'>{education.description}</p>
+              <div>
+                <h4 className="text-lg lg:text-xl font-bold text-[#0a2540] mb-1 lg:mb-2">{education.degree}</h4>
+                <p className="text-sm lg:text-base text-gray-600 font-medium">{education.institution}</p>
+              </div>
+              <div className="text-left md:text-right">
+                <div className="inline-block px-3 py-1 bg-white border border-gray-200 text-[#0a2540] text-[10px] sm:text-sm font-semibold rounded-md mb-2">
+                  Session: {education.session}
+                </div>
+                <p className={`text-xs sm:text-sm font-bold uppercase tracking-wide ${education.status === 'Ongoing' ? 'text-[#4fd1c5]' : 'text-[#0a2540]'}`}>
+                  {education.status}
+                </p>
+              </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
-  )
+  );
 }

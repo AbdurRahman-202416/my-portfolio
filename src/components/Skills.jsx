@@ -1,92 +1,56 @@
 export default function Skills() {
-  const skills = [
+  const skillCategories = [
     {
-      category: 'Programming Languages',
-      skills: [
-        { name: 'C', icon: 'fas fa-code' },
-        { name: 'C++', icon: 'fas fa-code' },
-        { name: 'JavaScript', icon: 'fab fa-js-square' },
-        { name: 'TypeScript', icon: 'custom-ts-icon' }
-      ]
+      title: 'Frontend Frameworks',
+      skills: ['React', 'Next.js', 'Angular']
     },
     {
-      category: 'Frontend',
-      skills: [
-        { name: 'HTML', icon: 'fab fa-html5' },
-        { name: 'CSS', icon: 'fab fa-css3-alt' },
-        { name: 'React.js', icon: 'fab fa-react' },
-        { name: 'Bootstrap', icon: 'fab fa-bootstrap' },
-        { name: 'Tailwind CSS', icon: 'fab fa-css3-alt' }
-      ]
+      title: 'Languages',
+      skills: ['TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3']
     },
     {
-      category: 'Backend',
-      skills: [
-        { name: 'Node.js', icon: 'fab fa-node' },
-        { name: 'Express.js', icon: 'fab fa-node' },
-        { name: 'MongoDB', icon: 'fas fa-database' },
-        { name: 'Mongoose', icon: 'fas fa-cogs' },
-        { name: 'MySQL', icon: 'fas fa-database' },
-        { name: 'REST API', icon: 'fas fa-plug' }
-      ]
-    },
-    {
-      category: 'Familiar',
-      skills: [
-        { name: 'Next.js', icon: 'fab fa-react' },
-        { name: 'Shadcn/ui', icon: 'fas fa-paint-brush' },
-        { name: 'Material-UI', icon: 'fas fa-paint-brush' }
-      ]
-    },
-    {
-      category: 'Tools',
-      skills: [
-        { name: 'Chrome Dev Tool', icon: 'fab fa-chrome' },
-        { name: 'Git', icon: 'fab fa-git' },
-        { name: 'Redux', icon: 'fab fa-react' },
-        { name: 'Axios', icon: 'fab fa-js-square' },
-        { name: 'React Router DOM', icon: 'fab fa-react' },
-        { name: 'Vercel', icon: 'fas fa-cloud' },
-        { name: 'Netlify', icon: 'fas fa-cloud' },
-        { name: 'ESLint', icon: 'fas fa-laptop-code' }
-      ]
+      title: 'Tools & Practices',
+      skills: ['Tailwind CSS', 'Redux', 'Git', 'RESTful APIs', 'Clean Architecture', 'Reusable Components']
     }
   ];
 
   return (
-    <section id='skills' className='py-12 bg-blue-50'>
-      <div className='container mx-auto px-6'>
-        <h2 className='text-3xl font-bold mb-8 text-center'>
-          Skills
-          <span className='block w-28 h-1 bg-blue-600 mx-auto mt-2 rounded'></span>
-        </h2>
-        <div className='space-y-8'>
-          {skills.map(({ category, skills }) => (
-            <div key={category}>
-              <h3 className='sm:text-2xl text-xl font-semibold text-center mb-6'>
-                {category}
-                <span className='block w-28 shadow-xl shadow-blue-600 h-[0.5px] bg-gray-400 mx-auto mt-2 rounded'></span>
-              </h3>
-              <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-4xl mx-auto'>
-                {skills.map(({ name, icon }) => (
-                  <div
-                    key={name}
-                    className='bg-white p-4 rounded-lg shadow-sm text-center flex flex-col items-center transform transition-transform duration-500 hover:rotate-3 hover:scale-110 hover:shadow-lg border-2 border-transparent hover:border-blue-500 hover:ring-2 hover:ring-blue-400 hover:ring-opacity-50'
+    <section id="skills" className="py-16 lg:py-24 bg-gray-50 border-y border-gray-100 relative">
+      <div className="container mx-auto px-6 max-w-7xl">
+        
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-xs sm:text-sm font-bold tracking-widest text-[#4fd1c5] uppercase mb-3">
+            Core Competencies
+          </h2>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a2540] mb-4">
+            Technical Arsenal
+          </h3>
+          <div className="w-16 h-1 bg-[#0a2540] rounded-full mx-auto"></div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+          {skillCategories.map((category, idx) => (
+            <div 
+              key={idx} 
+              className="bg-white rounded-2xl p-6 lg:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h4 className="text-base lg:text-lg font-bold text-[#0a2540] mb-5 lg:mb-6 pb-4 border-b border-gray-100">
+                {category.title}
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill, sIdx) => (
+                  <span 
+                    key={sIdx}
+                    className="px-3 py-1.5 bg-[#f8f9fa] text-gray-700 text-xs sm:text-sm font-medium rounded-md border border-gray-200 hover:border-[#4fd1c5] hover:bg-[#4fd1c5]/5 transition-colors cursor-default"
                   >
-                    {icon === 'custom-ts-icon' ? (
-                      <div className='bg-blue-600 text-white text-xl w-12 h-12 flex items-center justify-center rounded-full mb-2'>
-                        TS
-                      </div>
-                    ) : (
-                      <i className={`${icon} text-4xl mb-2 text-blue-600`} />
-                    )}
-                    <span className='text-lg font-medium'>{name}</span>
-                  </div>
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
