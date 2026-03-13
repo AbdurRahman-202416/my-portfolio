@@ -1,81 +1,76 @@
-import { MapPin, Calendar, Building } from 'lucide-react';
+import { MapPin, Calendar, Building, ChevronRight } from 'lucide-react';
 
 export default function Experience() {
   const experiences = [
     {
       role: 'Graduate Software Engineer',
-      company: 'Kona SL',
-      location: 'Gulshan-1, Dhaka',
-      duration: 'Present',
+      company: 'Kona Software Lab Limited',
+      location: 'Gulshan-2, Dhaka',
+      duration: 'May 2026 - Present',
       responsibilities: [
-        'Developing production-ready frontend applications',
-        'Working with modern frameworks (Angular, React)',
-        'Building reusable UI components',
-        'Collaborating with backend and product teams',
-        'Following best practices and clean code standards'
+        'Implemented product listing, filtering, and cart system with REST API integration.',
+        'Collaborated with backend engineers to integrate APIs, pixel-perfect web designs.',
+        'Optimized web performance and accessibility to ensure a seamless user experience across devices.'
+      ]
+    },
+    {
+      role: 'Front-End Developer Intern',
+      company: 'Kona Software Lab Limited',
+      location: 'Gulshan-2, Dhaka',
+      duration: 'Sep 2024 - Dec 2024',
+      responsibilities: [
+        'Gained hands-on experience in HTML, CSS, Tailwind CSS, JavaScript, and React.js.',
+        'Developed and improved UI components for web applications.',
+        'Worked collaboratively with the development team to implement responsive designs.'
       ]
     }
   ];
 
   return (
-    <section id="experience" className="py-16 lg:py-24 bg-white relative">
-      <div className="container mx-auto px-6 max-w-7xl">
-        
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-xs sm:text-sm font-bold tracking-widest text-[#4fd1c5] uppercase mb-3 text-left sm:text-center">
-            Career
-          </h2>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a2540] mb-4 text-left sm:text-center">
-            Professional Experience
-          </h3>
-          <div className="w-16 h-1 bg-[#0a2540] rounded-full mx-0 sm:mx-auto"></div>
-        </div>
+    <section id="experience" className="py-8 md:py-24 px-6 md:px-12 mx-auto overflow-hidden section-text-justify">
+      <div className="flex items-center mb-12 animate-in fade-in slide-in-from-left-10 duration-1000">
+        <h2 className="text-2xl md:text-3xl font-bold flex items-center text-[#ccd6f6] whitespace-nowrap">
+          <span className="text-[#64ffda] font-mono text-xl mr-2">02.</span> Experience
+        </h2>
+        <div className="ml-4 h-[1px] bg-[#233554] w-full hidden sm:block"></div>
+      </div>
 
-        <div className="max-w-4xl mx-auto">
-          {experiences.map((exp, index) => (
-            <div 
-              key={index}
-              className="relative pl-8 sm:pl-0 sm:flex gap-8 group"
-            >
-              {/* Timeline Line (Desktop) */}
-              <div className="hidden sm:flex flex-col items-center w-12 pb-8">
-                <div className="w-4 h-4 rounded-full bg-[#4fd1c5] ring-4 ring-[#4fd1c5]/20 z-10"></div>
-                <div className="w-px h-full bg-gray-100 -mt-2"></div>
+      <div className="space-y-8 md:space-y-12">
+        {experiences.map((exp, index) => (
+          <div 
+            key={index} 
+            className={`relative pl-8 border-l-2 border-[#233554] transition-all duration-700 animate-in fade-in slide-in-from-bottom-10`}
+            style={{ animationDelay: `${index * 200}ms` }}
+          >
+            {/* Timeline Dot */}
+            <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-[#0a192f] border-2 border-[#64ffda] shadow-[0_0_8px_#64ffda]"></div>
+            
+            <div className="space-y-3">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4">
+                <h3 className="text-xl md:text-2xl font-bold text-[#ccd6f6]">
+                  {exp.role} <span className="text-[#64ffda] break-words">@ {exp.company}</span>
+                </h3>
+                <span className="text-xs font-mono text-[#8892b0] bg-[#112240] px-3 py-1 rounded-full whitespace-nowrap">
+                  {exp.duration}
+                </span>
               </div>
-
-              {/* Timeline Dot (Mobile) */}
-              <div className="absolute left-0 top-6 w-3 h-3 rounded-full bg-[#4fd1c5] ring-4 ring-[#4fd1c5]/20 sm:hidden"></div>
-              {/* Timeline Line (Mobile) */}
-              <div className="absolute left-1 top-8 bottom-0 w-px bg-gray-100 sm:hidden"></div>
-
-              {/* Content Card */}
-              <div className="flex-1 bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
-                  <div>
-                    <h4 className="text-xl sm:text-2xl font-bold text-[#0a2540] mb-2">{exp.role}</h4>
-                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 text-gray-600 font-medium text-sm">
-                      <span className="flex items-center gap-1.5"><Building size={16} /> {exp.company}</span>
-                      <span className="flex items-center gap-1.5"><MapPin size={16} /> {exp.location}</span>
-                    </div>
-                  </div>
-                  <div className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#f8f9fa] rounded-full text-sm font-medium text-[#0a2540]">
-                    <Calendar size={16} className="text-[#4fd1c5]" /> {exp.duration}
-                  </div>
-                </div>
-
-                <ul className="space-y-3">
-                  {exp.responsibilities.map((task, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-600 leading-relaxed">
-                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#4fd1c5] shrink-0"></span>
-                      <span>{task}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <p className="text-sm font-mono text-[#8892b0] flex items-center gap-2">
+                <MapPin size={14} className="text-[#64ffda]" /> {exp.location}
+              </p>
+              
+              <ul className="mt-6 space-y-4">
+                {exp.responsibilities.map((resp, i) => (
+                  <li key={i} className="flex space-x-3 text-base md:text-lg text-[#8892b0] leading-relaxed group">
+                    <span className="text-[#64ffda] mt-1.5 min-w-[12px] h-[12px] flex items-center justify-center transition-transform group-hover:translate-x-1">
+                      <ChevronRight size={16} />
+                    </span>
+                    <span className="group-hover:text-[#ccd6f6] transition-colors">{resp}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
-        </div>
-
+          </div>
+        ))}
       </div>
     </section>
   );

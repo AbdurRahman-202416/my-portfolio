@@ -1,55 +1,39 @@
 export default function Education() {
-  const educationDetails = [
+  const education = [
     {
-      degree: 'M.Sc. in Computer Science & Engineering',
-      status: 'Ongoing',
-      institution: 'National University, Dhaka',
-      session: '2026–2027'
+      degree: 'Master of Computer Science and Engineering (MCSE)',
+      type: 'Postgraduate Degree',
+      description: 'Ongoing research focus on Passwordless Identity Management using WebAuthn.',
+      institution: 'National University, Bangladesh',
+      duration: '2026 - Present'
     },
     {
-      degree: 'B.Sc. in Computer Science & Engineering',
-      status: 'Completed',
-      institution: 'National University, Dhaka',
-      session: '2018–2022'
+      degree: 'Bachelor of Science in Computer Science (CSE)',
+      type: 'Undergraduate Degree',
+      description: 'Completed Bachelor’s degree with a focus on Software Engineering and Core Algorithms.',
+      institution: 'Institute of Science and Technology, National University',
+      duration: '2018 - 2022'
     }
   ];
 
   return (
-    <section id="education" className="py-16 lg:py-24 bg-white relative">
-      <div className="container mx-auto px-6 max-w-7xl">
-        
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-xs sm:text-sm font-bold tracking-widest text-[#4fd1c5] uppercase mb-3 text-left sm:text-center">
-            Academic Background
-          </h2>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a2540] mb-4 text-left sm:text-center">
-            Education
-          </h3>
-          <div className="w-16 h-1 bg-[#0a2540] rounded-full mx-0 sm:mx-auto"></div>
-        </div>
+    <section id="education" className="py-8 md:py-24 px-6 md:px-12 mx-auto section-text-justify">
+      <div className="flex items-center mb-10">
+        <h2 className="text-2xl md:text-3xl font-bold flex items-center text-[#ccd6f6] whitespace-nowrap">
+          <span className="text-[#3b82f6] font-mono text-xl mr-2">04.</span> Education
+        </h2>
+        <div className="ml-4 h-[1px] bg-[#233554] w-full max-w-md hidden sm:block"></div>
+      </div>
 
-        <div className="max-w-3xl mx-auto space-y-4 lg:space-y-6">
-          {educationDetails.map((education, index) => (
-            <div 
-              key={index}
-              className="bg-gray-50 border border-gray-100 p-6 lg:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4 hover:shadow-md transition-shadow group"
-            >
-              <div>
-                <h4 className="text-lg lg:text-xl font-bold text-[#0a2540] mb-1 lg:mb-2">{education.degree}</h4>
-                <p className="text-sm lg:text-base text-gray-600 font-medium">{education.institution}</p>
-              </div>
-              <div className="text-left md:text-right">
-                <div className="inline-block px-3 py-1 bg-white border border-gray-200 text-[#0a2540] text-[10px] sm:text-sm font-semibold rounded-md mb-2">
-                  Session: {education.session}
-                </div>
-                <p className={`text-xs sm:text-sm font-bold uppercase tracking-wide ${education.status === 'Ongoing' ? 'text-[#4fd1c5]' : 'text-[#0a2540]'}`}>
-                  {education.status}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
+      <div className="grid md:grid-cols-2 gap-6">
+        {education.map((edu, index) => (
+          <div key={index} className="bg-[#112240] p-8 rounded-lg border-l-4 border-[#3b82f6] hover:bg-[#1d2d44] transition-all duration-300">
+            <p className="text-[#3b82f6] font-mono text-xs uppercase tracking-widest mb-1">{edu.duration}</p>
+            <h3 className="text-xl font-bold text-[#ccd6f6] mb-1">{edu.degree}</h3>
+            <p className="text-[#ccd6f6] text-sm mb-4 italic opacity-70">{edu.institution}</p>
+            <p className="text-[#8892b0] text-sm leading-relaxed">{edu.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -1,62 +1,81 @@
+import { Download } from 'lucide-react';
+import Typewriter from 'typewriter-effect';
 
 export default function Hero() {
+  const handleScroll = (e, target) => {
+    e.preventDefault();
+    const element = document.getElementById(target);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="home" className="pt-24 pb-16 lg:pt-48 lg:pb-32 bg-gray-50/50 relative overflow-hidden">
-      {/* Background accents */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#0a2540]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#4fd1c5]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
-
-      <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-          
-          {/* Text Section */}
-          <div className="flex flex-col text-left order-2 lg:order-1">
-            <h2 className="text-[#4fd1c5] font-semibold tracking-wide uppercase text-xs sm:text-sm mb-4">
-              Graduate Software Engineer at Kona SL | React, Angular, Next.js Specialist
-            </h2>
-            
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a2540] leading-tight mb-6">
-              Frontend Software Engineer building scalable, production-ready web applications.
-            </h1>
-            
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-10 max-w-2xl leading-relaxed">
-              I help companies build clean, maintainable, and high-performance frontend applications with modern frameworks and best practices.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <a 
-                href="#projects" 
-                className="w-full sm:w-auto px-8 py-3.5 bg-[#0a2540] text-white rounded-md font-medium hover:bg-[#0a2540]/90 transition-all shadow-sm hover:shadow text-center"
-              >
-                View Projects
-              </a>
-              <a 
-                href="#contact" 
-                className="w-full sm:w-auto px-8 py-3.5 bg-white text-[#0a2540] border border-gray-200 rounded-md font-medium hover:border-[#0a2540] hover:bg-gray-50 transition-all text-center"
-              >
-                Hire Me
-              </a>
-            </div>
+    <section id="home" className="min-h-[450px] flex flex-col justify-center px-6 md:px-12 mx-auto pt-24 pb-4 md:pt-28 md:pb-0 overflow-hidden">
+      <div className="space-y-4 md:space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+        <h2 className="text-[#64ffda] font-mono text-sm sm:text-base tracking-widest reveal-text">
+          Hi, I'm
+        </h2>
+        
+        <div className="space-y-1 sm:space-y-2">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#ccd6f6] leading-tight flex flex-wrap gap-x-4">
+            Abdur Rahman.
+          </h1>
+          <div className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-[#8892b0] leading-tight min-h-[2.5em] sm:min-h-[2em] md:min-h-[1.5em]">
+            <Typewriter
+              options={{
+                strings: [
+                  'I build high performance web experiences.',
+                  'I specialize in React,Next.js & Angular.js.',
+                  'I solve real world problems with code.'
+                ],
+                autoStart: true,
+                loop: true,
+                delay: 50,
+                deleteSpeed: 30,
+                wrapperClassName: "typewriter-text"
+              }}
+            />
           </div>
-
-          {/* Personal Photo */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[280px] sm:max-w-sm lg:max-w-[480px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl group border-[6px] sm:border-[8px] border-white">
-              {/* Image */}
-              <img 
-                src="/my-photo.jpg" 
-                alt="Abdur Rahman" 
-                className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-              />
-              
-              {/* Subtle Overlay to match theme */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a2540]/40 to-transparent pointer-events-none mix-blend-multiply"></div>
-            </div>
-            
-            {/* Decorative dot background behind image */}
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-48 sm:w-64 h-48 sm:h-64 bg-[radial-gradient(#4fd1c5_2px,transparent_2px)] [background-size:16px_16px] opacity-20 -z-10 rounded-full"></div>
-          </div>
-
+        </div>
+        
+        <p className="text-sm sm:text-base md:text-lg text-[#8892b0] max-w-2xl leading-relaxed mt-4 animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-500">
+          I'm a <span className="text-[#64ffda]">Front-End Engineer</span> specialized in React and Next.js. Currently, I'm working as a <span className="text-[#64ffda]">Graduate Software Engineer</span> at Kona Software Lab, focusing on building scalable, accessible, and user-centric digital solutions.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4 sm:gap-6 pt-8 sm:pt-10 animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-700">
+          <a 
+            href="#projects" 
+            onClick={(e) => handleScroll(e, 'projects')}
+            className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#64ffda] text-[#64ffda] rounded font-mono text-xs sm:text-sm hover:bg-[#64ffda]/10 transition-all duration-300 shadow-lg hover:shadow-[#64ffda]/10 text-center"
+          >
+            Check out my work!
+          </a>
+          <a 
+            href="https://docs.google.com/document/d/1PPYMkD6P0IhFYCAg7U31XHeqLELG2mifb1vLB9FrnlQ/edit?usp=sharing" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#3b82f6] text-white rounded font-bold text-xs sm:text-sm hover:bg-[#2563eb] transition-all duration-300 shadow-[0_4px_14px_0_rgba(59,130,246,0.5)] active:scale-95"
+          >
+            <Download size={18} />
+            Download CV
+          </a>
+          <a 
+            href="#contact" 
+            onClick={(e) => handleScroll(e, 'contact')}
+            className="px-4 py-2 text-[#ccd6f6] font-mono text-xs sm:text-sm hover:text-[#64ffda] transition-all duration-300 flex items-center justify-center gap-2 group"
+          >
+            Get In Touch
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+      </div>
+      
+      {/* Visual Accent */}
+      <div className="hidden lg:block absolute right-12 md:right-24 bottom-24 md:bottom-32">
+        <div className="flex flex-col items-center gap-4 text-[#8892b0] animate-bounce">
+          <div className="w-[1px] h-16 md:h-24 bg-[#8892b0]"></div>
+          <span className="font-mono text-[10px] tracking-widest vertical-rl uppercase">Scroll</span>
         </div>
       </div>
     </section>

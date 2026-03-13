@@ -1,52 +1,53 @@
 export default function About() {
+  const skills = [
+    'JavaScript (ES6+)', 'TypeScript', 'React.js', 'Next.js', 'Angular.js', 'Tailwind CSS', 'Node.js', 'REST APIs'
+  ];
+
   return (
-    <section id="about" className="py-16 lg:py-24 bg-white relative">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-20 items-start">
+    <section id="about" className="py-8 md:py-24 px-6 md:px-12 mx-auto section-text-justify">
+      <div className="flex items-center mb-10 w-full">
+        <h2 className="text-2xl md:text-3xl font-bold flex items-center text-[#ccd6f6] whitespace-nowrap">
+          <span className="text-[#3b82f6] font-mono text-xl mr-2">01.</span> About Me
+        </h2>
+        <div className="ml-4 h-[1px] bg-[#233554] w-full max-w-md hidden sm:block"></div>
+      </div>
+
+      <div className="grid md:grid-cols-5 gap-12">
+        <div className="md:col-span-3 space-y-4">
+          <p className="text-base md:text-lg leading-relaxed">
+            I'm a <span className="text-[#3b82f6]">Graduate Software Engineer</span> at Kona Software Lab, specializing in building modern, high-performance web applications. I focus on creating clean, maintainable frontend architectures that solve complex business needs.
+          </p>
+          <p className="text-base md:text-lg leading-relaxed">
+            Recently, I've been deep-diving into <span className="text-[#3b82f6]">Passwordless Identity Management</span> leveraging WebAuthn for my Master's research, combining academic rigor with practical software engineering.
+          </p>
+          <p className="text-base md:text-lg leading-relaxed">
+            I am passionate about clean terminology, modern web standards, and pixel-perfect implementation. Whether it's architecting a complex state management system or fine-tuning CSS animations, I aim for excellence.
+          </p>
           
-          {/* Header/Title - 4 cols */}
-          <div className="lg:col-span-4 lg:sticky top-32">
-            <h2 className="text-xs sm:text-sm font-bold tracking-widest text-[#4fd1c5] uppercase mb-3 text-left">
-              About Me
-            </h2>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a2540] mb-6 leading-tight">
-              Engineering web experiences that matter.
-            </h3>
-            <div className="w-16 h-1 bg-[#0a2540] rounded-full"></div>
+          <div className="pt-4">
+            <h4 className="text-[#ccd6f6] font-semibold mb-4 text-sm uppercase tracking-wider font-mono italic">Technical Skills Grid:</h4>
+            <div className="grid grid-cols-2 gap-2">
+              {skills.map((skill) => (
+                <div key={skill} className="flex items-center space-x-2">
+                  <span className="text-[#3b82f6] text-xs">▹</span>
+                  <span className="text-sm font-mono">{skill}</span>
+                </div>
+              ))}
+            </div>
           </div>
+        </div>
 
-          {/* Content - 8 cols */}
-          <div className="lg:col-span-8 flex flex-col gap-8 mt-4 lg:mt-0">
-            <div className="prose prose-lg text-gray-600 max-w-none">
-              <p className="text-lg sm:text-xl leading-relaxed text-[#0a2540] font-medium mb-6">
-                I am a Software Developer and Graduate Engineer at Kona SL, focused on building scalable, high-performance web solutions for production environments.
-              </p>
-              
-              <p className="text-base sm:text-lg leading-relaxed mb-6">
-                My professional experience is rooted in delivering maintainable frontend architectures tailored for real-world business needs. Working within a structured company environment has ingrained in me the importance of clean code standards, cross-functional collaboration, and robust testing practices.
-              </p>
-              
-              <p className="text-base sm:text-lg leading-relaxed">
-                Beyond my daily engineering responsibilities, I maintain a strong research mindset. I hold a B.Sc. in Computer Science and Engineering and am currently pursuing my Master’s (MCSE), focusing my research on Passwordless Identity Management leveraging WebAuthn. This academic rigor deeply informs my approach to security and cutting-edge web standards in my shipping code.
-              </p>
+        <div className="md:col-span-2 flex justify-center items-start">
+          <div className="relative group max-w-xs">
+            <div className="absolute top-4 left-4 w-full h-full border-2 border-[#3b82f6] rounded translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
+            <div className="relative overflow-hidden rounded bg-[#112240]">
+              <img 
+                src="/my-photo.jpg" 
+                alt="Abdur Rahman" 
+                className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-all duration-300"
+              />
+              <div className="absolute inset-0 bg-[#3b82f6]/10 group-hover:bg-transparent transition-colors duration-300"></div>
             </div>
-
-            {/* Quick Stats Grid */}
-            <div className="grid sm:grid-cols-3 gap-4 lg:gap-6 pt-8 mt-4 border-t border-gray-100">
-              <div className="bg-gray-50 p-5 lg:p-6 rounded-xl border border-gray-100">
-                <p className="text-2xl lg:text-3xl font-bold text-[#0a2540] mb-2">2+</p>
-                <p className="text-xs lg:text-sm text-gray-600 font-medium">Years Enterprise Experience</p>
-              </div>
-              <div className="bg-gray-50 p-5 lg:p-6 rounded-xl border border-gray-100">
-                <p className="text-2xl lg:text-3xl font-bold text-[#0a2540] mb-2">15+</p>
-                <p className="text-xs lg:text-sm text-gray-600 font-medium">Projects Delivered</p>
-              </div>
-              <div className="bg-gray-50 p-5 lg:p-6 rounded-xl border border-gray-100">
-                <p className="text-2xl lg:text-3xl font-bold text-[#0a2540] mb-2">Ongoing</p>
-                <p className="text-xs lg:text-sm text-gray-600 font-medium">WebAuthn Research</p>
-              </div>
-            </div>
-            
           </div>
         </div>
       </div>

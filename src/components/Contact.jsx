@@ -1,106 +1,67 @@
-import { Mail, Linkedin, Github, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Phone } from 'lucide-react';
 
 export default function Contact() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <section id="contact" className="pt-20 lg:pt-32 bg-white border-t border-gray-100 flex flex-col relative overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#0a2540]/5 rounded-b-full blur-3xl pointer-events-none"></div>
-
-      <div className="container mx-auto px-6 max-w-4xl flex-1 relative z-10">
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-xs sm:text-sm font-bold tracking-widest text-[#4fd1c5] uppercase mb-4">
-            Next Steps
-          </h2>
-          <h3 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#0a2540] mb-6 leading-tight">
-            Let's build something reliable and scalable together.
-          </h3>
-          <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto mb-10 lg:mb-12">
-            I am currently available for long-term remote roles or freelance projects. Looking for a dependable frontend engineer to join your team?
-          </p>
-          
-          <a
-            href="https://www.upwork.com/freelancers/~019dd9f7dc821794dd"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#0a2540] text-white px-8 py-3.5 rounded-md font-medium text-base lg:text-lg hover:bg-[#0a2540]/90 transition-all shadow-md hover:shadow-lg"
+    <section id="contact" className="py-8 md:py-24 px-6 md:px-24 max-w-7xl mx-auto text-center">
+      <div className="flex flex-col items-center">
+        <h2 className="text-[#3b82f6] font-mono text-sm tracking-widest mb-4">
+          05. WHAT'S NEXT?
+        </h2>
+        <h3 className="text-4xl md:text-5xl font-bold text-[#ccd6f6] mb-6">
+          Get In Touch
+        </h3>
+        <p className="text-[#8892b0] max-w-lg mb-8 md:mb-12 text-base md:text-lg">
+          I'm currently looking for new opportunities and my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+        </p>
+        
+        <div className="flex flex-col space-y-4 mb-12">
+          <a 
+            href="mailto:abdurrahman19011@gmail.com" 
+            className="flex items-center justify-center gap-3 text-[#ccd6f6] hover:text-[#3b82f6] transition-colors text-base md:text-xl font-bold bg-[#112240] px-6 md:px-8 py-3 md:py-4 rounded-lg border border-[#233554] hover:border-[#3b82f6]/50"
           >
-            Hire Me on Upwork <ExternalLink size={20} />
+            <Mail size={20} className="text-[#3b82f6]" />
+            abdurrahman19011@gmail.com
+          </a>
+          
+          <a 
+            href="tel:+8801722341973" 
+            className="flex items-center justify-center gap-3 text-[#ccd6f6] hover:text-[#3b82f6] transition-colors text-base md:text-xl font-bold bg-[#112240] px-6 md:px-8 py-3 md:py-4 rounded-lg border border-[#233554] hover:border-[#3b82f6]/50"
+          >
+            <Phone size={20} className="text-[#3b82f6]" />
+            +880 1722341973
           </a>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto mt-16 pb-24">
+        <div className="flex space-x-8 mb-8 md:mb-16">
           <a 
-            href="mailto:abdur.rahman.00b@example.com" 
-            className="flex flex-col items-center gap-3 p-8 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors border border-gray-100 hover:border-gray-200"
+            href="https://www.linkedin.com/in/abdur-rahman-cse2024/" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-[#8892b0] hover:text-[#64ffda] transition-all hover:-translate-y-1"
           >
-            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100">
-              <Mail className="text-[#0a2540]" size={24} />
-            </div>
-            <span className="font-semibold text-[#0a2540] mt-2">Email Me</span>
-          </a>
-          <a 
-            href="https://www.linkedin.com/in/abdur-rahman-8635b9290" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center gap-3 p-8 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors border border-gray-100 hover:border-gray-200"
-          >
-            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100">
-              <Linkedin className="text-[#0a2540]" size={24} />
-            </div>
-            <span className="font-semibold text-[#0a2540] mt-2">LinkedIn</span>
+            <Linkedin size={28} />
           </a>
           <a 
             href="https://github.com/AbdurRahman-202416" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center gap-3 p-8 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors border border-gray-100 hover:border-gray-200"
+            target="_blank" 
+            rel="noreferrer" 
+            className="text-[#8892b0] hover:text-[#64ffda] transition-all hover:-translate-y-1"
           >
-            <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100">
-              <Github className="text-[#0a2540]" size={24} />
-            </div>
-            <span className="font-semibold text-[#0a2540] mt-2">GitHub</span>
+            <Github size={28} />
           </a>
         </div>
+
+        <footer className="w-full pt-8 border-t border-[#233554]">
+          <p className="text-[#8892b0] text-xs font-mono uppercase tracking-widest">
+            Designed & Built by Abdur Rahman © {currentYear}
+          </p>
+          <p className="text-[#8892b0] text-[10px] mt-2 opacity-50">
+            Dhaka, Bangladesh
+          </p>
+        </footer>
       </div>
-
-      {/* Footer Section */}
-      <footer className="w-full border-t border-gray-100 bg-gray-50 mt-auto">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="py-10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-center md:text-left">
-              <p className="text-lg font-bold text-[#0a2540] mb-1">Abdur Rahman</p>
-              <p className="text-sm text-gray-500 font-medium">Graduate Software Engineer</p>
-            </div>
-            
-            <p className="text-sm text-gray-400 font-medium order-3 md:order-2">
-              &copy; {currentYear} Abdur Rahman. All rights reserved.
-            </p>
-
-            <div className="flex items-center gap-5 order-2 md:order-3">
-              <a 
-                href="https://github.com/AbdurRahman-202416" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#0a2540] transition-colors"
-                aria-label="GitHub"
-              >
-                <Github size={22} />
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/abdur-rahman-8635b9290" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#0a2540] transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={22} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </section>
   );
 }

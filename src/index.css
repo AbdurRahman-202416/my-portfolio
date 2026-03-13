@@ -1,29 +1,133 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0a2540;
-  --color-secondary: #4fd1c5;
-  --color-accent: #f8f9fa;
-  --color-text-main: #334155;
-  --color-text-muted: #64748b;
-  --font-sans: "Inter", "Poppins", "SF Pro", sans-serif;
-  --font-heading: "Inter", "Poppins", "SF Pro", sans-serif;
+  --color-bg-primary: #0a192f;
+  --color-bg-secondary: #112240;
+  --color-text-primary: #ccd6f6;
+  --color-text-secondary: #8892b0;
+  --color-accent: #64ffda;
+  --color-btn-blue: #3b82f6;
+  --font-sans: "Inter", "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
+  --font-mono: "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Offset for fixed header */
 }
 
 body {
   font-family: var(--font-sans);
-  color: var(--color-text-main);
-  background-color: #ffffff;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-secondary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  color: var(--color-primary);
-  opacity: 0.95;
+section {
+  scroll-margin-top: 80px;
+  width: 100%;
+  max-width: 1000px; /* Standardized width for better alignment */
+  margin-left: auto;
+  margin-right: auto;
 }
+
+/* Default alignment for all text - crucial for mobile readability */
+p, li {
+  text-align: left;
+  hyphens: none; /* Hyphens can look messy on short text */
+}
+
+/* Apply justification only on desktop where width allows for clean spacing */
+@media (min-width: 1024px) {
+  .section-text-justify p {
+    text-align: justify;
+  }
+}
+
+/* Project descriptions should stay left-aligned for clarity in small cards */
+.project-description {
+  text-align: left !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.section-number {
+  font-family: var(--font-mono);
+  color: var(--color-btn-blue);
+  font-size: 1.25rem;
+  margin-right: 10px;
+}
+
+.heading-line::after {
+  content: "";
+  display: block;
+  width: 300px;
+  height: 1px;
+  margin-left: 20px;
+  background-color: var(--color-bg-secondary);
+}
+
+@media (max-width: 768px) {
+  .heading-line::after {
+    width: 100px;
+  }
+}
+
+::selection {
+  background-color: #233554;
+  color: #64ffda;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #495670;
+  border-radius: 10px;
+  border: 3px solid var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8892b0;
+}
+
+/* Animations */
+@keyframes reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.reveal-text {
+  animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.typewriter-text {
+  color: var(--color-text-primary);
+}
+
+.Typewriter__cursor {
+  color: var(--color-accent);
+  font-weight: 100;
+}
+
+@media (max-width: 640px) {
+  section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+

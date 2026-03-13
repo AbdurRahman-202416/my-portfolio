@@ -3,13 +3,11 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 const SocialLinks = () => {
   const socialLinks = [
     { href: 'https://github.com/AbdurRahman-202416?tab=repositories0', icon: 'github' },
-    { href: 'https://www.linkedin.com/in/abdur-rahman-8635b9290', icon: 'linkedin' },
-    { href: 'https://www.facebook.com/shak.santo.7/', icon: 'facebook' },
-    { href: 'https://www.instagram.com/sajjad_hossen_santo', icon: 'instagram' }
+    { href: 'https://www.linkedin.com/in/abdur-rahman-cse2024/', icon: 'linkedin' },
   ];
 
   return (
-    <div className="flex justify-center mt-5 sm:mt-4 gap-4 ">
+    <div className="flex justify-center mt-5 sm:mt-4 gap-4 px-6 md:px-0">
       {socialLinks.map(({ href, icon }) => (
         <a
           key={icon}
