@@ -99,7 +99,7 @@ export default function Header() {
             : 'border-b border-transparent bg-transparent'
         }`}
       >
-        <nav aria-label="Primary" className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-10 md:h-20">
+        <nav aria-label="Primary" className="mx-auto flex h-14 max-w-7xl items-center justify-between px-5 sm:px-10 md:h-16">
           <a href="#home" aria-label="Abdur Rahman, back to top" className="group flex items-center gap-3">
             <span className="transition-transform duration-300 group-hover:rotate-[30deg]">
               <Logo />

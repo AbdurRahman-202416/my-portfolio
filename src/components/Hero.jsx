@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate mx-auto flex min-h-[100svh] w-full max-w-5xl flex-col justify-center px-6 pb-16 pt-28 md:px-12"
+      className="relative isolate mx-auto flex min-h-[100svh] w-full max-w-5xl flex-col justify-center px-5 pb-16 pt-28 md:px-12"
     >
       <div
         aria-hidden="true"
@@ -28,14 +28,14 @@ export default function Hero() {
       </p>
 
       <h1
-        className="load-in mt-4 text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-[5.25rem]"
+        className="load-in mt-4 text-[clamp(2rem,10vw,2.75rem)] font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl"
         style={{ '--delay': '200ms' }}
       >
         Abdur Rahman.
       </h1>
 
       <div
-        className="load-in mt-3 min-h-[2.5em] max-w-4xl text-2xl font-bold leading-tight text-muted sm:text-3xl md:text-4xl lg:text-[2.75rem]"
+        className="load-in mt-3 min-h-[2.5em] max-w-4xl md:min-h-[1.2em] text-xl font-bold leading-tight text-muted sm:text-2xl md:text-3xl lg:text-4xl"
         style={{ '--delay': '320ms' }}
       >
         {reducedMotion ? (
@@ -55,7 +55,7 @@ export default function Hero() {
       </div>
 
       <p
-        className="load-in mt-8 max-w-xl text-base leading-relaxed sm:text-lg"
+        className="load-in mt-6 max-w-xl text-[15px] leading-relaxed sm:text-base md:mt-8 md:text-lg"
         style={{ '--delay': '440ms' }}
       >
         I'm a <span className="text-fg">Graduate Engineer</span> at{' '}
@@ -94,7 +94,7 @@ export default function Hero() {
       <a
         href="#about"
         aria-label="Scroll to About"
-        className="load-in absolute bottom-10 right-6 hidden flex-col items-center gap-3 text-muted transition-colors hover:text-accent md:right-12 lg:flex"
+        className="load-in absolute bottom-10 right-5 hidden flex-col items-center gap-3 text-muted transition-colors hover:text-accent md:right-12 lg:flex"
         style={{ '--delay': '900ms' }}
       >
         <span className="scroll-cue block h-16 w-px bg-current" />

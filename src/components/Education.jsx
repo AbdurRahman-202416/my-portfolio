@@ -25,7 +25,7 @@ export default function Education() {
             as="li"
             key={edu.degree}
             delay={i * 120}
-            className="rounded-lg border-l-2 border-accent bg-panel p-7 transition-[background-color,transform] duration-300 ease-out-soft hover:-translate-y-1 hover:bg-panel-hover md:p-8"
+            className="rounded-lg border-l-2 border-accent bg-panel p-5 transition-[background-color,transform] duration-300 ease-out-soft hover:-translate-y-1 hover:bg-panel-hover md:p-8"
           >
             <p className="font-mono text-xs text-accent">{edu.duration}</p>
             <h3 className="mt-2 text-lg font-bold leading-snug md:text-xl">{edu.degree}</h3>

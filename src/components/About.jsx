@@ -4,8 +4,8 @@ import Reveal from './Reveal';
 export default function About() {
   return (
     <Section id="about" title="About me">
-      <div className="grid gap-12 md:grid-cols-5 md:gap-14">
-        <Reveal className="max-w-prose space-y-5 text-base leading-relaxed md:col-span-3 md:text-lg">
+      <div className="grid gap-8 md:grid-cols-5 md:gap-14">
+        <Reveal className="max-w-prose space-y-4 text-[15px] leading-relaxed md:col-span-3 md:space-y-5 md:text-base">
           <p>
             I'm a <span className="text-fg">Graduate Engineer</span> at Kona Software Lab in Dhaka. Most of my work is
             in Angular and TypeScript on the CMS and Switch Portal applications: customer and card workflows, data

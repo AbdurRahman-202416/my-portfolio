@@ -95,7 +95,7 @@ const otherProjects = [
 
 function ProjectLinks({ project, size = 18 }) {
   const linkClass =
-    'inline-flex items-center gap-1.5 text-sm font-medium text-fg transition-colors duration-200 hover:text-accent';
+    '-my-2.5 inline-flex items-center gap-1.5 py-2.5 text-sm font-medium text-fg transition-colors duration-200 hover:text-accent';
 
   return (
     <div className="flex items-center gap-5">
@@ -147,11 +147,11 @@ function FeaturedProject({ project, reversed }) {
           decoding="async"
           className="aspect-[16/10] w-full object-cover object-top transition-transform duration-700 ease-out-soft group-hover:scale-[1.04]"
         />
-        <div className="absolute inset-0 bg-ink/35 transition-opacity duration-500 group-hover:opacity-0" />
+        <div className="absolute inset-0 bg-ink/10 transition md:bg-ink/35-opacity duration-500 group-hover:opacity-0" />
       </a>
 
       <div className={`lg:col-span-5 ${reversed ? 'lg:order-1' : ''}`}>
-        <h3 className="text-2xl font-bold leading-tight md:text-[1.7rem]">{project.title}</h3>
+        <h3 className="text-xl font-bold leading-tight md:text-2xl">{project.title}</h3>
         <p className="mt-4 leading-relaxed">{project.description}</p>
         <div className="mt-5">
           <TechList technologies={project.technologies} />
@@ -177,10 +177,10 @@ function ProjectCard({ project, index }) {
           alt=""
           loading="lazy"
           decoding="async"
-          className="h-full w-full object-cover object-top opacity-80 transition-[transform,opacity] duration-500 ease-out-soft group-hover:scale-105 group-hover:opacity-100"
+          className="h-full w-full object-cover object-top md:opacity-80 transition-[transform,opacity] duration-500 ease-out-soft group-hover:scale-105 group-hover:opacity-100"
         />
       </div>
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-5 md:p-6">
         <h3 className="text-lg font-bold leading-snug transition-colors duration-300 group-hover:text-accent">
           {project.title}
         </h3>
@@ -199,13 +199,13 @@ function ProjectCard({ project, index }) {
 export default function Projects() {
   return (
     <Section id="projects" title="Projects">
-      <ul className="space-y-20 md:space-y-28">
+      <ul className="space-y-12 md:space-y-20">
         {featuredProjects.map((project, i) => (
           <FeaturedProject key={project.title} project={project} reversed={i % 2 === 1} />
         ))}
       </ul>
 
-      <Reveal as="h3" className="mt-24 text-xl font-bold md:mt-32 md:text-2xl">
+      <Reveal as="h3" className="mt-12 text-lg font-bold md:mt-20 md:text-xl">
         Other projects
       </Reveal>
       <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

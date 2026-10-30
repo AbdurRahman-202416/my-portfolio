@@ -17,13 +17,13 @@ export default function Contact() {
       <section
         id="contact"
         aria-labelledby="contact-title"
-        className="mx-auto w-full max-w-3xl px-6 py-20 text-center md:px-12 md:py-28"
+        className="mx-auto w-full max-w-3xl px-5 py-8 text-center md:px-12 md:py-14"
       >
         <Reveal>
-          <h2 id="contact-title" className="text-4xl font-extrabold md:text-6xl">
+          <h2 id="contact-title" className="text-3xl font-extrabold md:text-5xl">
             Get in touch
           </h2>
-          <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed md:text-lg">
+          <p className="mx-auto mt-5 max-w-lg text-[15px] leading-relaxed md:text-base">
             I'm open to new opportunities and my inbox is always open. Whether you have a question or just want to say
             hi, I'll get back to you.
           </p>
@@ -64,7 +64,7 @@ export default function Contact() {
         </Reveal>
       </section>
 
-      <footer className="mx-auto max-w-5xl border-t border-line px-6 py-8 text-center md:px-12">
+      <footer className="mx-auto max-w-5xl border-t border-line px-5 py-8 text-center md:px-12">
         <p className="font-mono text-xs text-muted">Designed &amp; built by Abdur Rahman © {new Date().getFullYear()}</p>
         <p className="mt-1.5 text-xs text-muted/60">Dhaka, Bangladesh</p>
       </footer>

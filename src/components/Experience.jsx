@@ -99,9 +99,9 @@ function StackList({ items }) {
 export default function Experience() {
   return (
     <Section id="experience" title="Experience">
-      <ol className="space-y-14 md:space-y-16">
+      <ol className="space-y-8 md:space-y-12">
         {experiences.map((exp) => (
-          <Reveal as="li" key={exp.role} className="relative border-l border-line pl-7 md:pl-10">
+          <Reveal as="li" key={exp.role} className="relative border-l border-line pl-5 md:pl-10">
             <span
               aria-hidden="true"
               className={`absolute -left-[7px] top-2 h-3.5 w-3.5 rounded-full border-2 border-accent bg-ink ${
@@ -110,7 +110,7 @@ export default function Experience() {
             />
 
             <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
-              <h3 className="text-xl font-bold leading-snug md:text-2xl">
+              <h3 className="text-lg font-bold leading-snug md:text-xl">
                 {exp.role} <span className="text-accent">@ {exp.company}</span>
               </h3>
               <span className="w-fit shrink-0 rounded-full bg-panel px-3 py-1 font-mono text-xs text-muted">
@@ -121,23 +121,23 @@ export default function Experience() {
               <MapPin size={14} className="text-accent" aria-hidden="true" /> {exp.location}
             </p>
 
-            {exp.summary && <p className="mt-5 max-w-3xl text-base leading-relaxed md:text-lg">{exp.summary}</p>}
+            {exp.summary && <p className="mt-4 max-w-3xl text-[15px] leading-relaxed md:text-base">{exp.summary}</p>}
 
             {exp.responsibilities && (
-              <BulletList items={exp.responsibilities} className="mt-6 max-w-3xl text-base md:text-[1.05rem]" />
+              <BulletList items={exp.responsibilities} className="mt-5 max-w-3xl text-[15px] md:text-base" />
             )}
 
             {exp.projects?.map((project, i) => (
               <Reveal
                 key={project.name}
                 delay={120}
-                className={`group ${i === 0 ? 'mt-8' : 'mt-6'} rounded-lg border border-line bg-panel/60 p-6 transition-colors duration-300 hover:border-accent/40 md:p-8`}
+                className={`group ${i === 0 ? 'mt-6 md:mt-8' : 'mt-5 md:mt-6'} md:rounded-lg md:border md:border-line md:bg-panel/60 md:p-8 md:transition-colors md:duration-300 md:hover:border-accent/40`}
               >
-                <h4 className="text-lg font-bold text-fg transition-colors duration-300 group-hover:text-accent md:text-xl">
+                <h4 className="text-base font-bold text-fg transition-colors duration-300 group-hover:text-accent md:text-lg">
                   {project.name}
                 </h4>
                 <p className="mt-1 text-sm text-muted">{project.context}</p>
-                <BulletList items={project.responsibilities} className="mt-5 text-[0.95rem]" />
+                <BulletList items={project.responsibilities} className="mt-4 text-sm md:text-[15px]" />
                 <div className="mt-6">
                   <StackList items={project.stack} />
                 </div>
