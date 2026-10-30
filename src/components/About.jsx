@@ -7,7 +7,7 @@ export default function About() {
       <div className="grid gap-8 md:grid-cols-5 md:gap-14">
         <Reveal className="max-w-prose space-y-4 text-[15px] leading-relaxed md:col-span-3 md:space-y-5 md:text-base">
           <p>
-            I'm a <span className="text-fg">Graduate Engineer</span> at Kona Software Lab in Dhaka. Most of my work is
+            I'm a <span className="text-fg">Software Engineer</span> at Kona Software Lab in Dhaka. Most of my work is
             in Angular and TypeScript on the CMS and Switch Portal applications: customer and card workflows, data
             tables, filters and forms wired to REST APIs, and a real-time transaction dashboard fed by Server-Sent
             Events.
@@ -17,6 +17,10 @@ export default function About() {
             Next.js with Zustand and TanStack Query, with a UI that works in both Korean and English. And I write{' '}
             <span className="text-fg">Playwright E2E tests</span> for product setup, card applications, customer
             lifecycle and maker–checker approvals.
+          </p>
+          <p>
+            I also build <span className="text-fg">AI-powered applications</span> with LLM streaming, multi-model
+            integration and agentic workflows using the Vercel AI SDK, OpenRouter, MCP and Claude Code.
           </p>
           <p>
             For my Master's research I'm working on{' '}

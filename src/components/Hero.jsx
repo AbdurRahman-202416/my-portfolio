@@ -6,6 +6,7 @@ const taglines = [
   'I build interfaces for card and payment operations.',
   'I work across Angular, React and Next.js.',
   'I automate end-to-end journeys with Playwright.',
+  'I build AI-powered apps with LLM streaming and agents.',
 ];
 
 const CV_URL = 'https://drive.google.com/file/d/1nCOzrHj_qR6jP3WZuN0oaUUgzRSv9AO1/view?usp=sharing';
@@ -58,10 +59,10 @@ export default function Hero() {
         className="load-in mt-6 max-w-xl text-[15px] leading-relaxed sm:text-base md:mt-8 md:text-lg"
         style={{ '--delay': '440ms' }}
       >
-        I'm a <span className="text-fg">Graduate Engineer</span> at{' '}
+        I'm a <span className="text-fg">Software Engineer</span> at{' '}
         <span className="text-accent">Kona Software Lab</span>. I build Angular enterprise portals for card
         management and switch operations, including a real-time SSE transaction dashboard, and the Next.js
-        front end of KonaPlate. I also write Playwright end-to-end tests.
+        front end of KonaPlate. I also write Playwright end-to-end tests and build AI-powered applications with LLM streaming and agentic workflows.
       </p>
 
       <div

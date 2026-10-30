@@ -5,13 +5,13 @@ const education = [
   {
     degree: 'Master of Computer Science and Engineering (MCSE)',
     description: 'Ongoing research on passwordless identity management using WebAuthn.',
-    institution: 'National University, Bangladesh',
+    institution: 'Institute of Science and Technology (IST), National University, Bangladesh',
     duration: '2026 – Present',
   },
   {
-    degree: 'Bachelor of Science in Computer Science (CSE)',
+    degree: 'Bachelor of Science in Computer Science and Engineering (CSE)',
     description: 'Focus on software engineering and core algorithms.',
-    institution: 'Institute of Science and Technology, National University',
+    institution: 'Institute of Science and Technology (IST), National University, Bangladesh',
     duration: '2018 – 2022',
   },
 ];

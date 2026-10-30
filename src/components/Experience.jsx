@@ -4,7 +4,7 @@ import Reveal from './Reveal';
 
 const experiences = [
   {
-    role: 'Graduate Engineer',
+    role: 'Software Engineer',
     company: 'Kona Software Lab Limited',
     location: 'Dhaka, Bangladesh',
     duration: 'May 2025 – Present',
@@ -54,7 +54,7 @@ const experiences = [
     ],
   },
   {
-    role: 'Front-End Developer Intern',
+    role: 'Front-End Intern',
     company: 'Kona Software Lab Limited',
     location: 'Dhaka, Bangladesh',
     duration: 'Sep 2024 – Dec 2024',

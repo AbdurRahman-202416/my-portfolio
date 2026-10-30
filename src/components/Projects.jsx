@@ -1,4 +1,4 @@
-import { ExternalLink, Github } from 'lucide-react';
+import { Bot, ExternalLink, Github } from 'lucide-react';
 import Section from './Section';
 import Reveal from './Reveal';
 import ecom from '../assets/e-com.jpeg';
@@ -15,8 +15,8 @@ const featuredProjects = [
   {
     title: 'Smart Billing and Inventory Manager',
     description:
-      'A mobile-responsive retail management system for managing inventory and sales, designed for ease of use, speed and efficiency.',
-    technologies: ['Next.js 15', 'TypeScript', 'Zustand', 'Tailwind CSS'],
+      'A mobile-responsive retail management system for managing inventory and sales, designed for ease of use, speed and efficiency. Includes barcode scanning, cart and checkout workflows, and print-ready invoices.',
+    technologies: ['Next.js 15', 'React', 'TypeScript', 'Zustand', 'Tailwind CSS', 'Framer Motion'],
     image: inventory,
     demoLink: 'https://smart-billing-and-inventory-manager.vercel.app/',
     repoLink: 'https://github.com/AbdurRahman-202416/smart-billing-and-inventory-manager',
@@ -25,7 +25,7 @@ const featuredProjects = [
     title: 'FIDO Passkeys',
     description:
       'A passwordless authentication system using WebAuthn, with a secure Node.js/Express backend for server-side verification.',
-    technologies: ['Next.js 15', 'React 19', 'WebAuthn', 'Node.js', 'Express'],
+    technologies: ['Next.js 15', 'React 19', 'TypeScript', 'WebAuthn', 'Node.js', 'Express'],
     image: fido,
     demoLink: 'https://authentication-passwordless-fido-au.vercel.app/',
     repoLink: 'https://github.com/AbdurRahman-202416/authentication-passwordless-fido-auth-portal',
@@ -43,6 +43,15 @@ const featuredProjects = [
 
 const otherProjects = [
   {
+    title: 'Friendly Chatbot – AI Assistant',
+    description:
+      'An LLM chat assistant with streaming responses via the Vercel AI SDK and OpenRouter. Switch across 16 models, reasoning-aware rendering in a collapsible thinking block, readable rate-limit and credit errors with retry, and light/dark themes.',
+    technologies: ['Next.js 16', 'React 19', 'TypeScript', 'Vercel AI SDK', 'OpenRouter', 'Zustand', 'Tailwind CSS'],
+    image: null,
+    demoLink: null,
+    repoLink: null,
+  },
+  {
     title: 'Premium Academy Portal',
     description:
       'An education site with scroll-triggered animations, interactive components and a custom design system.',
@@ -53,8 +62,9 @@ const otherProjects = [
   },
   {
     title: 'E-Commerce Website',
-    description: 'Responsive storefront with product listing, filtering and cart, using Axios for API communication.',
-    technologies: ['React', 'Tailwind', 'Axios', 'Context API'],
+    description:
+      'Responsive storefront on the EscuelaJS API with product categories, listings, filtering, cart and detail views with a Swiper image carousel, plus client-side routing and loading indicators.',
+    technologies: ['React 18', 'Vite', 'Tailwind', 'Axios', 'React Router', 'Swiper', 'Context API'],
     image: ecom,
     demoLink: 'https://react-ecommerce-swart-five.vercel.app/',
     repoLink: 'https://github.com/AbdurRahman-202416/react-ecommerce',
@@ -99,11 +109,13 @@ function ProjectLinks({ project, size = 18 }) {
 
   return (
     <div className="flex items-center gap-5">
-      <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className={linkClass}>
-        <Github size={size} aria-hidden="true" />
-        Code
-        <span className="sr-only">for {project.title} (opens in a new tab)</span>
-      </a>
+      {project.repoLink && (
+        <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className={linkClass}>
+          <Github size={size} aria-hidden="true" />
+          Code
+          <span className="sr-only">for {project.title} (opens in a new tab)</span>
+        </a>
+      )}
       {project.demoLink && (
         <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className={linkClass}>
           <ExternalLink size={size} aria-hidden="true" />
@@ -172,13 +184,19 @@ function ProjectCard({ project, index }) {
       className="group flex flex-col overflow-hidden rounded-lg bg-panel ring-1 ring-transparent transition-[transform,box-shadow] duration-300 ease-out-soft hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-black/40 hover:ring-accent/30"
     >
       <div className="relative h-40 overflow-hidden bg-ink">
-        <img
-          src={project.image}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          className="h-full w-full object-cover object-top md:opacity-80 transition-[transform,opacity] duration-500 ease-out-soft group-hover:scale-105 group-hover:opacity-100"
-        />
+        {project.image ? (
+          <img
+            src={project.image}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover object-top md:opacity-80 transition-[transform,opacity] duration-500 ease-out-soft group-hover:scale-105 group-hover:opacity-100"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-panel to-ink text-accent/60">
+            <Bot size={48} aria-hidden="true" />
+          </div>
+        )}
       </div>
       <div className="flex flex-1 flex-col p-5 md:p-6">
         <h3 className="text-lg font-bold leading-snug transition-colors duration-300 group-hover:text-accent">
