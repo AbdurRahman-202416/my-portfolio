@@ -1,83 +1,105 @@
 import { Download } from 'lucide-react';
 import Typewriter from 'typewriter-effect';
+import usePrefersReducedMotion from '../hooks/usePrefersReducedMotion';
+
+const taglines = [
+  'I build interfaces for card and payment operations.',
+  'I work across Angular, React and Next.js.',
+  'I automate end-to-end journeys with Playwright.',
+];
+
+const CV_URL = 'https://drive.google.com/file/d/1nCOzrHj_qR6jP3WZuN0oaUUgzRSv9AO1/view?usp=sharing';
 
 export default function Hero() {
-  const handleScroll = (e, target) => {
-    e.preventDefault();
-    const element = document.getElementById(target);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const reducedMotion = usePrefersReducedMotion();
 
   return (
-    <section id="home" className="min-h-[450px] flex flex-col justify-center px-6 md:px-12 mx-auto pt-24 pb-4 md:pt-28 md:pb-0 overflow-hidden">
-      <div className="space-y-4 md:space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-        <h2 className="text-[#64ffda] font-mono text-sm sm:text-base tracking-widest reveal-text">
-          Hi, I'm
-        </h2>
-        
-        <div className="space-y-1 sm:space-y-2">
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#ccd6f6] leading-tight flex flex-wrap gap-x-4">
-            Abdur Rahman.
-          </h1>
-          <div className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-[#8892b0] leading-tight min-h-[2.5em] sm:min-h-[2em] md:min-h-[1.5em]">
-            <Typewriter
-              options={{
-                strings: [
-                  'I build high performance web experiences.',
-                  'I specialize in React,Next.js & Angular.js.',
-                  'I solve real world problems with code.'
-                ],
-                autoStart: true,
-                loop: true,
-                delay: 50,
-                deleteSpeed: 30,
-                wrapperClassName: "typewriter-text"
-              }}
-            />
-          </div>
-        </div>
-        
-        <p className="text-sm sm:text-base md:text-lg text-[#8892b0] max-w-2xl leading-relaxed mt-4 animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-500">
-          I'm a <span className="text-[#64ffda]">Front-End Engineer</span> specialized in React and Next.js. Currently, I'm working as a <span className="text-[#64ffda]">Graduate Software Engineer</span> at Kona Software Lab, focusing on building scalable, accessible, and user-centric digital solutions.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4 sm:gap-6 pt-8 sm:pt-10 animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-700">
-          <a 
-            href="#projects" 
-            onClick={(e) => handleScroll(e, 'projects')}
-            className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#64ffda] text-[#64ffda] rounded font-mono text-xs sm:text-sm hover:bg-[#64ffda]/10 transition-all duration-300 shadow-lg hover:shadow-[#64ffda]/10 text-center"
-          >
-            Check out my work!
-          </a>
-          <a 
-            href="https://docs.google.com/document/d/1PPYMkD6P0IhFYCAg7U31XHeqLELG2mifb1vLB9FrnlQ/edit?usp=sharing" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#3b82f6] text-white rounded font-bold text-xs sm:text-sm hover:bg-[#2563eb] transition-all duration-300 shadow-[0_4px_14px_0_rgba(59,130,246,0.5)] active:scale-95"
-          >
-            <Download size={18} />
-            Download CV
-          </a>
-          <a 
-            href="#contact" 
-            onClick={(e) => handleScroll(e, 'contact')}
-            className="px-4 py-2 text-[#ccd6f6] font-mono text-xs sm:text-sm hover:text-[#64ffda] transition-all duration-300 flex items-center justify-center gap-2 group"
-          >
-            Get In Touch
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </a>
-        </div>
+    <section
+      id="home"
+      className="relative isolate mx-auto flex min-h-[100svh] w-full max-w-5xl flex-col justify-center px-6 pb-16 pt-28 md:px-12"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 top-10 -z-10 h-[420px] w-[420px] rounded-full bg-accent/[0.07] blur-3xl"
+      />
+
+      <p className="load-in font-mono text-sm text-accent sm:text-base" style={{ '--delay': '100ms' }}>
+        Hi, I'm
+      </p>
+
+      <h1
+        className="load-in mt-4 text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl lg:text-[5.25rem]"
+        style={{ '--delay': '200ms' }}
+      >
+        Abdur Rahman.
+      </h1>
+
+      <div
+        className="load-in mt-3 min-h-[2.5em] max-w-4xl text-2xl font-bold leading-tight text-muted sm:text-3xl md:text-4xl lg:text-[2.75rem]"
+        style={{ '--delay': '320ms' }}
+      >
+        {reducedMotion ? (
+          <span>{taglines[0]}</span>
+        ) : (
+          <Typewriter
+            options={{
+              strings: taglines,
+              autoStart: true,
+              loop: true,
+              delay: 45,
+              deleteSpeed: 25,
+              pauseFor: 2200,
+            }}
+          />
+        )}
       </div>
-      
-      {/* Visual Accent */}
-      <div className="hidden lg:block absolute right-12 md:right-24 bottom-24 md:bottom-32">
-        <div className="flex flex-col items-center gap-4 text-[#8892b0] animate-bounce">
-          <div className="w-[1px] h-16 md:h-24 bg-[#8892b0]"></div>
-          <span className="font-mono text-[10px] tracking-widest vertical-rl uppercase">Scroll</span>
-        </div>
+
+      <p
+        className="load-in mt-8 max-w-xl text-base leading-relaxed sm:text-lg"
+        style={{ '--delay': '440ms' }}
+      >
+        I'm a <span className="text-fg">Graduate Engineer</span> at{' '}
+        <span className="text-accent">Kona Software Lab</span>. I build Angular enterprise portals for card
+        management and switch operations, including a real-time SSE transaction dashboard, and the Next.js
+        front end of KonaPlate. I also write Playwright end-to-end tests.
+      </p>
+
+      <div
+        className="load-in mt-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5"
+        style={{ '--delay': '560ms' }}
+      >
+        <a
+          href="#projects"
+          className="rounded-md border border-accent px-7 py-3.5 text-center font-mono text-sm text-accent transition-[background-color,transform] duration-300 hover:-translate-y-0.5 hover:bg-accent/10"
+        >
+          See my work
+        </a>
+        <a
+          href={CV_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 rounded-md bg-accent px-7 py-3.5 text-sm font-bold text-ink shadow-[0_8px_24px_-8px_rgb(100_255_218/0.55)] transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_-8px_rgb(100_255_218/0.7)] active:translate-y-0"
+        >
+          <Download size={17} aria-hidden="true" />
+          Download CV
+        </a>
+        <a
+          href="#contact"
+          className="px-2 py-2 text-center text-sm font-medium text-fg underline-offset-8 transition-colors hover:text-accent hover:underline"
+        >
+          Get in touch
+        </a>
       </div>
+
+      <a
+        href="#about"
+        aria-label="Scroll to About"
+        className="load-in absolute bottom-10 right-6 hidden flex-col items-center gap-3 text-muted transition-colors hover:text-accent md:right-12 lg:flex"
+        style={{ '--delay': '900ms' }}
+      >
+        <span className="scroll-cue block h-16 w-px bg-current" />
+        <span className="font-mono text-[10px] tracking-widest [writing-mode:vertical-rl]">scroll</span>
+      </a>
     </section>
   );
 }

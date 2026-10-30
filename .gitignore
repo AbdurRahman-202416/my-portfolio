@@ -9,6 +9,9 @@ lerna-debug.log*
 
 node_modules
 dist
+
+# Internal work reports (not for publishing)
+*_Contribution_Report.md
 dist-ssr
 *.local
 

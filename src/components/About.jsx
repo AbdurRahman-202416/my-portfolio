@@ -1,56 +1,50 @@
+import Section from './Section';
+import Reveal from './Reveal';
+
 export default function About() {
-  const skills = [
-    'JavaScript (ES6+)', 'TypeScript', 'React.js', 'Next.js', 'Angular.js', 'Tailwind CSS', 'Node.js', 'REST APIs'
-  ];
-
   return (
-    <section id="about" className="py-8 md:py-24 px-6 md:px-12 mx-auto section-text-justify">
-      <div className="flex items-center mb-10 w-full">
-        <h2 className="text-2xl md:text-3xl font-bold flex items-center text-[#ccd6f6] whitespace-nowrap">
-          <span className="text-[#3b82f6] font-mono text-xl mr-2">01.</span> About Me
-        </h2>
-        <div className="ml-4 h-[1px] bg-[#233554] w-full max-w-md hidden sm:block"></div>
-      </div>
+    <Section id="about" title="About me">
+      <div className="grid gap-12 md:grid-cols-5 md:gap-14">
+        <Reveal className="max-w-prose space-y-5 text-base leading-relaxed md:col-span-3 md:text-lg">
+          <p>
+            I'm a <span className="text-fg">Graduate Engineer</span> at Kona Software Lab in Dhaka. Most of my work is
+            in Angular and TypeScript on the CMS and Switch Portal applications: customer and card workflows, data
+            tables, filters and forms wired to REST APIs, and a real-time transaction dashboard fed by Server-Sent
+            Events.
+          </p>
+          <p>
+            I also build the front end of <span className="text-fg">KonaPlate</span>, an affiliated payment system, in
+            Next.js with Zustand and TanStack Query, with a UI that works in both Korean and English. And I write{' '}
+            <span className="text-fg">Playwright E2E tests</span> for product setup, card applications, customer
+            lifecycle and maker–checker approvals.
+          </p>
+          <p>
+            For my Master's research I'm working on{' '}
+            <span className="text-accent">passwordless authentication with WebAuthn</span>. Outside work I build side
+            projects in React and Next.js; a few of them are below.
+          </p>
+        </Reveal>
 
-      <div className="grid md:grid-cols-5 gap-12">
-        <div className="md:col-span-3 space-y-4">
-          <p className="text-base md:text-lg leading-relaxed">
-            I'm a <span className="text-[#3b82f6]">Graduate Software Engineer</span> at Kona Software Lab, specializing in building modern, high-performance web applications. I focus on creating clean, maintainable frontend architectures that solve complex business needs.
-          </p>
-          <p className="text-base md:text-lg leading-relaxed">
-            Recently, I've been deep-diving into <span className="text-[#3b82f6]">Passwordless Identity Management</span> leveraging WebAuthn for my Master's research, combining academic rigor with practical software engineering.
-          </p>
-          <p className="text-base md:text-lg leading-relaxed">
-            I am passionate about clean terminology, modern web standards, and pixel-perfect implementation. Whether it's architecting a complex state management system or fine-tuning CSS animations, I aim for excellence.
-          </p>
-          
-          <div className="pt-4">
-            <h4 className="text-[#ccd6f6] font-semibold mb-4 text-sm uppercase tracking-wider font-mono italic">Technical Skills Grid:</h4>
-            <div className="grid grid-cols-2 gap-2">
-              {skills.map((skill) => (
-                <div key={skill} className="flex items-center space-x-2">
-                  <span className="text-[#3b82f6] text-xs">▹</span>
-                  <span className="text-sm font-mono">{skill}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="md:col-span-2 flex justify-center items-start">
-          <div className="relative group max-w-xs">
-            <div className="absolute top-4 left-4 w-full h-full border-2 border-[#3b82f6] rounded translate-x-2 translate-y-2 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-300"></div>
-            <div className="relative overflow-hidden rounded bg-[#112240]">
-              <img 
-                src="/my-photo.jpg" 
-                alt="Abdur Rahman" 
-                className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-all duration-300"
+        <Reveal delay={150} className="flex items-start justify-center md:col-span-2 md:justify-end md:pt-2">
+          <div className="group relative w-full max-w-[17rem]">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 translate-x-2.5 translate-y-2.5 rounded-lg border-2 border-accent/80 transition-transform duration-300 ease-out-soft group-hover:translate-x-1.5 group-hover:translate-y-1.5"
+            />
+            <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-panel shadow-xl shadow-black/30">
+              <img
+                src="/my-photo.jpg"
+                alt="Abdur Rahman"
+                width="600"
+                height="800"
+                loading="lazy"
+                decoding="async"
+                className="block h-full w-full object-cover transition-transform duration-500 ease-out-soft group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-[#3b82f6]/10 group-hover:bg-transparent transition-colors duration-300"></div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
-    </section>
+    </Section>
   );
 }

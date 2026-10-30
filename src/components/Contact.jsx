@@ -1,67 +1,73 @@
-import { Github, Linkedin, Twitter, Mail, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone } from 'lucide-react';
+import Reveal from './Reveal';
+
+const contactLinks = [
+  { href: 'mailto:abdurrahman19011@gmail.com', label: 'abdurrahman19011@gmail.com', icon: Mail },
+  { href: 'tel:+8801722341973', label: '+880 1722341973', icon: Phone },
+];
+
+const socialLinks = [
+  { href: 'https://www.linkedin.com/in/abdur-rahman-cse2024/', label: 'LinkedIn', icon: Linkedin },
+  { href: 'https://github.com/AbdurRahman-202416', label: 'GitHub', icon: Github },
+];
 
 export default function Contact() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <section id="contact" className="py-8 md:py-24 px-6 md:px-24 max-w-7xl mx-auto text-center">
-      <div className="flex flex-col items-center">
-        <h2 className="text-[#3b82f6] font-mono text-sm tracking-widest mb-4">
-          05. WHAT'S NEXT?
-        </h2>
-        <h3 className="text-4xl md:text-5xl font-bold text-[#ccd6f6] mb-6">
-          Get In Touch
-        </h3>
-        <p className="text-[#8892b0] max-w-lg mb-8 md:mb-12 text-base md:text-lg">
-          I'm currently looking for new opportunities and my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-        </p>
-        
-        <div className="flex flex-col space-y-4 mb-12">
-          <a 
-            href="mailto:abdurrahman19011@gmail.com" 
-            className="flex items-center justify-center gap-3 text-[#ccd6f6] hover:text-[#3b82f6] transition-colors text-base md:text-xl font-bold bg-[#112240] px-6 md:px-8 py-3 md:py-4 rounded-lg border border-[#233554] hover:border-[#3b82f6]/50"
-          >
-            <Mail size={20} className="text-[#3b82f6]" />
-            abdurrahman19011@gmail.com
-          </a>
-          
-          <a 
-            href="tel:+8801722341973" 
-            className="flex items-center justify-center gap-3 text-[#ccd6f6] hover:text-[#3b82f6] transition-colors text-base md:text-xl font-bold bg-[#112240] px-6 md:px-8 py-3 md:py-4 rounded-lg border border-[#233554] hover:border-[#3b82f6]/50"
-          >
-            <Phone size={20} className="text-[#3b82f6]" />
-            +880 1722341973
-          </a>
-        </div>
-
-        <div className="flex space-x-8 mb-8 md:mb-16">
-          <a 
-            href="https://www.linkedin.com/in/abdur-rahman-cse2024/" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-[#8892b0] hover:text-[#64ffda] transition-all hover:-translate-y-1"
-          >
-            <Linkedin size={28} />
-          </a>
-          <a 
-            href="https://github.com/AbdurRahman-202416" 
-            target="_blank" 
-            rel="noreferrer" 
-            className="text-[#8892b0] hover:text-[#64ffda] transition-all hover:-translate-y-1"
-          >
-            <Github size={28} />
-          </a>
-        </div>
-
-        <footer className="w-full pt-8 border-t border-[#233554]">
-          <p className="text-[#8892b0] text-xs font-mono uppercase tracking-widest">
-            Designed & Built by Abdur Rahman © {currentYear}
+    <>
+      <section
+        id="contact"
+        aria-labelledby="contact-title"
+        className="mx-auto w-full max-w-3xl px-6 py-20 text-center md:px-12 md:py-28"
+      >
+        <Reveal>
+          <h2 id="contact-title" className="text-4xl font-extrabold md:text-6xl">
+            Get in touch
+          </h2>
+          <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed md:text-lg">
+            I'm open to new opportunities and my inbox is always open. Whether you have a question or just want to say
+            hi, I'll get back to you.
           </p>
-          <p className="text-[#8892b0] text-[10px] mt-2 opacity-50">
-            Dhaka, Bangladesh
-          </p>
-        </footer>
-      </div>
-    </section>
+        </Reveal>
+
+        <Reveal delay={120} className="mt-10 flex flex-col items-stretch gap-4 sm:flex-row sm:justify-center">
+          {contactLinks.map((link) => {
+            const Icon = link.icon;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className="group flex items-center justify-center gap-3 rounded-lg border border-line bg-panel px-6 py-4 font-semibold text-fg transition-[border-color,color,transform] duration-300 hover:-translate-y-0.5 hover:border-accent/60 hover:text-accent"
+              >
+                <Icon size={19} className="text-accent" aria-hidden="true" />
+                <span className="break-all">{link.label}</span>
+              </a>
+            );
+          })}
+        </Reveal>
+
+        <Reveal delay={220} className="mt-10 flex justify-center gap-6">
+          {socialLinks.map((link) => {
+            const Icon = link.icon;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${link.label} (opens in a new tab)`}
+                className="rounded-full p-2 text-muted transition-[color,transform] duration-300 hover:-translate-y-1 hover:text-accent"
+              >
+                <Icon size={26} aria-hidden="true" />
+              </a>
+            );
+          })}
+        </Reveal>
+      </section>
+
+      <footer className="mx-auto max-w-5xl border-t border-line px-6 py-8 text-center md:px-12">
+        <p className="font-mono text-xs text-muted">Designed &amp; built by Abdur Rahman © {new Date().getFullYear()}</p>
+        <p className="mt-1.5 text-xs text-muted/60">Dhaka, Bangladesh</p>
+      </footer>
+    </>
   );
 }

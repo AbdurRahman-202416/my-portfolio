@@ -1,77 +1,151 @@
-import { MapPin, Calendar, Building, ChevronRight } from 'lucide-react';
+import { MapPin } from 'lucide-react';
+import Section from './Section';
+import Reveal from './Reveal';
+
+const experiences = [
+  {
+    role: 'Graduate Engineer',
+    company: 'Kona Software Lab Limited',
+    location: 'Dhaka, Bangladesh',
+    duration: 'May 2025 – Present',
+    current: true,
+    summary:
+      'I work on two product lines at Kona Software Lab: CMS and Switch Portal, Angular enterprise applications for customer, card and transaction management; and KonaPlate Affiliate WebView, a Next.js white-label prepaid card WebView embedded in partner mobile apps.',
+    projects: [
+      {
+        name: 'CMS and Switch Portal',
+        context: 'Angular enterprise applications for card issuers',
+        responsibilities: [
+          'Develop customer and card management workflows covering card activation, international payment controls, and credit, debit, and prepaid card applications; integrate REST APIs and build reusable components, data tables, filters, forms, and validation.',
+          'Develop SSE-powered transaction dashboards displaying throughput, approval rates, response times, network health, transaction details, and decline reasons; support internationalized interfaces across enterprise modules.',
+          'Work on notification templates, rewards, sanctions, journal entries, and ATM FIT configuration; maintain Playwright E2E tests for card applications, customer lifecycle, and Maker–Checker approval workflows.',
+        ],
+        stack: [
+          'Angular',
+          'TypeScript',
+          'RxJS',
+          'Angular Material',
+          'Angular CDK',
+          'ngx-formly',
+          'ngx-datatable',
+          'ngx-translate',
+          'ApexCharts',
+        ],
+      },
+      {
+        name: 'KonaPlate Affiliate WebView (Revamp)',
+        context: 'White-label prepaid card WebView for partner mobile apps',
+        responsibilities: [
+          'Developed white-label prepaid card WebView modules for partner mobile apps, including Card Registration, Card List and Tracking, Pay Home, PG/QR Payments, ATM/Store Withdrawals, and Refunds.',
+          'Built pixel-accurate, mobile-first interfaces from Figma using Tailwind CSS, shadcn/ui, and Radix UI; implemented Zustand for state management and TanStack React Query for asynchronous data fetching and caching.',
+          'Resolved design and functional issues from KSL reviews, HQ inspections, and design QA; developed Playwright E2E tests for Card List and Card Details, and prototyped face detection, fingerprint authentication, and React Native WebView hosting.',
+        ],
+        stack: [
+          'Next.js 15',
+          'React 19',
+          'TypeScript',
+          'Zustand',
+          'TanStack React Query',
+          'Tailwind CSS',
+          'shadcn/ui',
+          'Playwright',
+        ],
+      },
+    ],
+  },
+  {
+    role: 'Front-End Developer Intern',
+    company: 'Kona Software Lab Limited',
+    location: 'Dhaka, Bangladesh',
+    duration: 'Sep 2024 – Dec 2024',
+    responsibilities: [
+      'Gained hands-on experience in HTML, CSS, Tailwind CSS, JavaScript, and React.js; developed reusable UI components.',
+      'Collaborated with the development team to implement responsive designs across different screen sizes.',
+    ],
+  },
+];
+
+function BulletList({ items, className = '' }) {
+  return (
+    <ul className={`space-y-3 ${className}`}>
+      {items.map((item) => {
+        const { label, text } = typeof item === 'string' ? { text: item } : item;
+        return (
+          <li key={label ?? text} className="flex gap-3 leading-relaxed">
+            <span aria-hidden="true" className="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span>
+              {label && <strong className="font-semibold text-fg">{label}: </strong>}
+              {text}
+            </span>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+function StackList({ items }) {
+  return (
+    <ul aria-label="Technologies used" className="flex flex-wrap gap-2">
+      {items.map((tech) => (
+        <li key={tech} className="rounded-full bg-accent/10 px-3 py-1 font-mono text-xs text-accent">
+          {tech}
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default function Experience() {
-  const experiences = [
-    {
-      role: 'Graduate Software Engineer',
-      company: 'Kona Software Lab Limited',
-      location: 'Gulshan-2, Dhaka',
-      duration: 'May 2026 - Present',
-      responsibilities: [
-        'Implemented product listing, filtering, and cart system with REST API integration.',
-        'Collaborated with backend engineers to integrate APIs, pixel-perfect web designs.',
-        'Optimized web performance and accessibility to ensure a seamless user experience across devices.'
-      ]
-    },
-    {
-      role: 'Front-End Developer Intern',
-      company: 'Kona Software Lab Limited',
-      location: 'Gulshan-2, Dhaka',
-      duration: 'Sep 2024 - Dec 2024',
-      responsibilities: [
-        'Gained hands-on experience in HTML, CSS, Tailwind CSS, JavaScript, and React.js.',
-        'Developed and improved UI components for web applications.',
-        'Worked collaboratively with the development team to implement responsive designs.'
-      ]
-    }
-  ];
-
   return (
-    <section id="experience" className="py-8 md:py-24 px-6 md:px-12 mx-auto overflow-hidden section-text-justify">
-      <div className="flex items-center mb-12 animate-in fade-in slide-in-from-left-10 duration-1000">
-        <h2 className="text-2xl md:text-3xl font-bold flex items-center text-[#ccd6f6] whitespace-nowrap">
-          <span className="text-[#64ffda] font-mono text-xl mr-2">02.</span> Experience
-        </h2>
-        <div className="ml-4 h-[1px] bg-[#233554] w-full hidden sm:block"></div>
-      </div>
+    <Section id="experience" title="Experience">
+      <ol className="space-y-14 md:space-y-16">
+        {experiences.map((exp) => (
+          <Reveal as="li" key={exp.role} className="relative border-l border-line pl-7 md:pl-10">
+            <span
+              aria-hidden="true"
+              className={`absolute -left-[7px] top-2 h-3.5 w-3.5 rounded-full border-2 border-accent bg-ink ${
+                exp.current ? 'pulse-ring' : ''
+              }`}
+            />
 
-      <div className="space-y-8 md:space-y-12">
-        {experiences.map((exp, index) => (
-          <div 
-            key={index} 
-            className={`relative pl-8 border-l-2 border-[#233554] transition-all duration-700 animate-in fade-in slide-in-from-bottom-10`}
-            style={{ animationDelay: `${index * 200}ms` }}
-          >
-            {/* Timeline Dot */}
-            <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-[#0a192f] border-2 border-[#64ffda] shadow-[0_0_8px_#64ffda]"></div>
-            
-            <div className="space-y-3">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-4">
-                <h3 className="text-xl md:text-2xl font-bold text-[#ccd6f6]">
-                  {exp.role} <span className="text-[#64ffda] break-words">@ {exp.company}</span>
-                </h3>
-                <span className="text-xs font-mono text-[#8892b0] bg-[#112240] px-3 py-1 rounded-full whitespace-nowrap">
-                  {exp.duration}
-                </span>
-              </div>
-              <p className="text-sm font-mono text-[#8892b0] flex items-center gap-2">
-                <MapPin size={14} className="text-[#64ffda]" /> {exp.location}
-              </p>
-              
-              <ul className="mt-6 space-y-4">
-                {exp.responsibilities.map((resp, i) => (
-                  <li key={i} className="flex space-x-3 text-base md:text-lg text-[#8892b0] leading-relaxed group">
-                    <span className="text-[#64ffda] mt-1.5 min-w-[12px] h-[12px] flex items-center justify-center transition-transform group-hover:translate-x-1">
-                      <ChevronRight size={16} />
-                    </span>
-                    <span className="group-hover:text-[#ccd6f6] transition-colors">{resp}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+              <h3 className="text-xl font-bold leading-snug md:text-2xl">
+                {exp.role} <span className="text-accent">@ {exp.company}</span>
+              </h3>
+              <span className="w-fit shrink-0 rounded-full bg-panel px-3 py-1 font-mono text-xs text-muted">
+                {exp.duration}
+              </span>
             </div>
-          </div>
+            <p className="mt-2 flex items-center gap-2 text-sm text-muted">
+              <MapPin size={14} className="text-accent" aria-hidden="true" /> {exp.location}
+            </p>
+
+            {exp.summary && <p className="mt-5 max-w-3xl text-base leading-relaxed md:text-lg">{exp.summary}</p>}
+
+            {exp.responsibilities && (
+              <BulletList items={exp.responsibilities} className="mt-6 max-w-3xl text-base md:text-[1.05rem]" />
+            )}
+
+            {exp.projects?.map((project, i) => (
+              <Reveal
+                key={project.name}
+                delay={120}
+                className={`group ${i === 0 ? 'mt-8' : 'mt-6'} rounded-lg border border-line bg-panel/60 p-6 transition-colors duration-300 hover:border-accent/40 md:p-8`}
+              >
+                <h4 className="text-lg font-bold text-fg transition-colors duration-300 group-hover:text-accent md:text-xl">
+                  {project.name}
+                </h4>
+                <p className="mt-1 text-sm text-muted">{project.context}</p>
+                <BulletList items={project.responsibilities} className="mt-5 text-[0.95rem]" />
+                <div className="mt-6">
+                  <StackList items={project.stack} />
+                </div>
+              </Reveal>
+            ))}
+          </Reveal>
         ))}
-      </div>
-    </section>
+      </ol>
+    </Section>
   );
 }
